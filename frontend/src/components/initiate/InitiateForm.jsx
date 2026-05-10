@@ -56,9 +56,9 @@ function SelectField({ label, icon: Icon, value, onChange, options, name, error 
   const [focused, setFocused] = useState(false)
   return (
     <div className="flex flex-col gap-2">
-      <label className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>{label}</label>
+      <label className="text-sm font-medium text-[#5A5A5A]">{label}</label>
       <div className="relative">
-        <div className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: focused ? '#1A4A7A' : 'rgba(255,255,255,0.2)' }}>
+        <div className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: focused ? '#1A4A7A' : '#B0B0B0' }}>
           <Icon size={16} />
         </div>
         <select
@@ -67,24 +67,23 @@ function SelectField({ label, icon: Icon, value, onChange, options, name, error 
           onChange={onChange}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
-          className="w-full pl-11 pr-10 py-3.5 rounded-xl text-sm appearance-none outline-none transition-all duration-200"
+          className="w-full pl-11 pr-10 py-3.5 rounded-xl text-sm appearance-none outline-none transition-all duration-200 text-[#1A1A1A]"
           style={{
-            background: 'rgba(255,255,255,0.03)',
-            border: `1px solid ${focused ? 'rgba(26,74,122,0.5)' : error ? 'rgba(239,68,68,0.5)' : 'rgba(255,255,255,0.08)'}`,
-            color: value ? 'white' : 'rgba(255,255,255,0.3)',
+            background: '#FFFFFF',
+            border: `1px solid ${focused ? '#1A4A7A' : error ? '#ef4444' : '#E5E5E5'}`,
             boxShadow: focused ? '0 0 0 3px rgba(26,74,122,0.1)' : 'none',
           }}
         >
-          <option value="" disabled style={{ background: '#111118' }}>Select an option</option>
+          <option value="" disabled style={{ background: '#FFFFFF', color: '#8A8A8A' }}>Select an option</option>
           {options.map((o) => (
-            <option key={o} value={o} style={{ background: '#111118', color: 'white' }}>{o}</option>
+            <option key={o} value={o} style={{ background: '#FFFFFF', color: '#1A1A1A' }}>{o}</option>
           ))}
         </select>
         <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-          <ChevronDown size={16} style={{ color: 'rgba(255,255,255,0.3)' }} />
+          <ChevronDown size={16} style={{ color: '#B0B0B0' }} />
         </div>
       </div>
-      {error && <p className="text-xs" style={{ color: 'rgba(239,68,68,0.8)' }}>{error}</p>}
+      {error && <p className="text-xs text-red-500">{error}</p>}
     </div>
   )
 }
@@ -93,24 +92,24 @@ function InputField({ label, icon: Icon, error, ...props }) {
   const [focused, setFocused] = useState(false)
   return (
     <div className="flex flex-col gap-2">
-      <label className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>{label}</label>
+      <label className="text-sm font-medium text-[#5A5A5A]">{label}</label>
       <div className="relative">
-        <div className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: focused ? '#1A4A7A' : 'rgba(255,255,255,0.2)' }}>
+        <div className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: focused ? '#1A4A7A' : '#B0B0B0' }}>
           <Icon size={16} />
         </div>
         <input
           {...props}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
-          className="w-full pl-11 pr-4 py-3.5 rounded-xl text-white text-sm outline-none transition-all duration-200"
+          className="w-full pl-11 pr-4 py-3.5 rounded-xl text-[#1A1A1A] text-sm outline-none transition-all duration-200 placeholder:text-[#B0B0B0]"
           style={{
-            background: 'rgba(255,255,255,0.03)',
-            border: `1px solid ${focused ? 'rgba(26,74,122,0.5)' : error ? 'rgba(239,68,68,0.5)' : 'rgba(255,255,255,0.08)'}`,
+            background: '#FFFFFF',
+            border: `1px solid ${focused ? '#1A4A7A' : error ? '#ef4444' : '#E5E5E5'}`,
             boxShadow: focused ? '0 0 0 3px rgba(26,74,122,0.1)' : 'none',
           }}
         />
       </div>
-      {error && <motion.p className="text-xs" style={{ color: 'rgba(239,68,68,0.8)' }} initial={{ opacity: 0, y: -5 }} animate={{ opacity: 1, y: 0 }}>{error}</motion.p>}
+      {error && <motion.p className="text-xs text-red-500" initial={{ opacity: 0, y: -5 }} animate={{ opacity: 1, y: 0 }}>{error}</motion.p>}
     </div>
   )
 }
@@ -163,7 +162,7 @@ export default function InitiateForm() {
 
   if (submitted) {
     return (
-      <section className="section-padding" style={{ background: '#0A0A0F' }}>
+      <section className="section-padding" style={{ background: '#F8F9FA' }}>
         <div className="container-custom">
           <motion.div
             className="max-w-xl mx-auto text-center py-20"
@@ -173,14 +172,14 @@ export default function InitiateForm() {
           >
             <motion.div
               className="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-8"
-              style={{ background: 'rgba(44,110,73,0.15)', border: '1px solid rgba(44,110,73,0.3)' }}
+              style={{ background: 'rgba(44,110,73,0.1)', border: '1px solid rgba(44,110,73,0.2)' }}
               animate={{ scale: [1, 1.08, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
               <CheckCircle size={44} style={{ color: '#2C6E49' }} />
             </motion.div>
-            <h2 className="text-3xl font-display font-black text-white mb-4">Opening WhatsApp...</h2>
-            <p style={{ color: 'rgba(255,255,255,0.45)' }}>
+            <h2 className="text-3xl font-display font-black text-[#1A1A1A] mb-4">Opening WhatsApp...</h2>
+            <p className="text-[#5A5A5A]">
               Your project brief is prefilled. A senior strategist will respond within 2 hours.
             </p>
           </motion.div>
@@ -190,7 +189,7 @@ export default function InitiateForm() {
   }
 
   return (
-    <section className="section-padding" style={{ background: '#0A0A0F' }} ref={ref}>
+    <section className="section-padding" style={{ background: '#F8F9FA' }} ref={ref}>
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
           {/* Left sidebar info */}
@@ -203,16 +202,16 @@ export default function InitiateForm() {
             <div>
               <div
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-                style={{ background: 'rgba(26,74,122,0.12)', border: '1px solid rgba(26,74,122,0.25)' }}
+                style={{ background: 'rgba(26,74,122,0.08)', border: '1px solid rgba(26,74,122,0.15)' }}
               >
-                <span className="font-mono text-xs tracking-widest uppercase" style={{ color: '#1A4A7A' }}>
+                <span className="font-mono text-xs tracking-widest uppercase font-semibold" style={{ color: '#1A4A7A' }}>
                   Start Here
                 </span>
               </div>
-              <h2 className="text-3xl lg:text-4xl font-display font-black text-white mb-4 leading-tight">
+              <h2 className="text-3xl lg:text-4xl font-display font-black text-[#1A1A1A] mb-4 leading-tight">
                 Tell us about your business
               </h2>
-              <p className="text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>
+              <p className="text-base leading-relaxed text-[#5A5A5A]">
                 The more detail you share, the more specific and valuable our response will be.
                 No generic replies. No templates. Just a real strategy, built for you.
               </p>
@@ -221,9 +220,9 @@ export default function InitiateForm() {
             {/* What happens next */}
             <div
               className="p-6 rounded-2xl"
-              style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}
+              style={{ background: '#FFFFFF', border: '1px solid #E5E5E5', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
             >
-              <h4 className="font-display font-bold text-white mb-4">What happens next</h4>
+              <h4 className="font-display font-bold text-[#1A1A1A] mb-4">What happens next</h4>
               {[
                 { step: '01', text: 'We review your brief within 2 hours' },
                 { step: '02', text: 'Senior strategist connects on WhatsApp' },
@@ -231,8 +230,8 @@ export default function InitiateForm() {
                 { step: '04', text: 'You decide if we\'re the right fit' },
               ].map(({ step, text }) => (
                 <div key={step} className="flex items-start gap-3 mb-3 last:mb-0">
-                  <span className="font-mono text-xs flex-shrink-0 mt-0.5" style={{ color: '#1A4A7A' }}>{step}</span>
-                  <span className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>{text}</span>
+                  <span className="font-mono text-xs flex-shrink-0 mt-0.5 font-semibold" style={{ color: '#1A4A7A' }}>{step}</span>
+                  <span className="text-sm text-[#5A5A5A]">{text}</span>
                 </div>
               ))}
             </div>
@@ -242,7 +241,7 @@ export default function InitiateForm() {
               {['No long-term contracts required', 'Results guaranteed or we work for free', '200+ brands successfully scaled', 'Senior strategists only — no juniors'].map((t) => (
                 <div key={t} className="flex items-center gap-2">
                   <CheckCircle size={14} style={{ color: '#2C6E49' }} />
-                  <span className="text-sm" style={{ color: 'rgba(255,255,255,0.4)' }}>{t}</span>
+                  <span className="text-sm text-[#8A8A8A]">{t}</span>
                 </div>
               ))}
             </div>
@@ -257,7 +256,7 @@ export default function InitiateForm() {
           >
             <div
               className="rounded-3xl p-8 lg:p-10"
-              style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}
+              style={{ background: '#FFFFFF', border: '1px solid #E5E5E5', boxShadow: '0 4px 16px rgba(0,0,0,0.04)' }}
             >
               <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -275,7 +274,7 @@ export default function InitiateForm() {
 
                 {/* Service checkboxes */}
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                  <label className="text-sm font-medium text-[#5A5A5A]">
                     Services Interested In *
                   </label>
                   <div className="flex flex-wrap gap-2">
@@ -288,9 +287,9 @@ export default function InitiateForm() {
                           onClick={() => toggleService(s)}
                           className="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200"
                           style={{
-                            background: active ? 'linear-gradient(135deg,#1A4A7A,#2563EB)' : 'rgba(255,255,255,0.04)',
-                            border: `1px solid ${active ? 'transparent' : 'rgba(255,255,255,0.08)'}`,
-                            color: active ? 'white' : 'rgba(255,255,255,0.45)',
+                            background: active ? 'linear-gradient(135deg,#1A4A7A,#2563EB)' : '#F8F9FA',
+                            border: `1px solid ${active ? 'transparent' : '#E5E5E5'}`,
+                            color: active ? 'white' : '#5A5A5A',
                           }}
                         >
                           {s}
@@ -299,40 +298,40 @@ export default function InitiateForm() {
                     })}
                   </div>
                   {errors.services && (
-                    <p className="text-xs" style={{ color: 'rgba(239,68,68,0.8)' }}>{errors.services}</p>
+                    <p className="text-xs text-red-500">{errors.services}</p>
                   )}
                 </div>
 
                 {/* Message */}
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                  <label className="text-sm font-medium text-[#5A5A5A]">
                     Project Details *
                   </label>
                   <div className="relative">
-                    <MessageSquare size={16} className="absolute left-4 top-4" style={{ color: 'rgba(255,255,255,0.2)' }} />
+                    <MessageSquare size={16} className="absolute left-4 top-4" style={{ color: '#B0B0B0' }} />
                     <textarea
                       name="message"
                       value={form.message}
                       onChange={handleChange}
                       placeholder="Describe your current situation, biggest growth challenges, what you've tried before, and what success looks like for your business..."
                       rows={5}
-                      className="w-full pl-11 pr-4 py-3.5 rounded-xl text-white text-sm outline-none resize-none transition-all duration-200"
+                      className="w-full pl-11 pr-4 py-3.5 rounded-xl text-[#1A1A1A] text-sm outline-none resize-none transition-all duration-200 placeholder:text-[#B0B0B0]"
                       style={{
-                        background: 'rgba(255,255,255,0.03)',
-                        border: `1px solid ${errors.message ? 'rgba(239,68,68,0.5)' : 'rgba(255,255,255,0.08)'}`,
+                        background: '#FFFFFF',
+                        border: `1px solid ${errors.message ? '#ef4444' : '#E5E5E5'}`,
                       }}
                       onFocus={(e) => {
-                        e.target.style.borderColor = 'rgba(26,74,122,0.5)'
+                        e.target.style.borderColor = '#1A4A7A'
                         e.target.style.boxShadow = '0 0 0 3px rgba(26,74,122,0.1)'
                       }}
                       onBlur={(e) => {
-                        e.target.style.borderColor = errors.message ? 'rgba(239,68,68,0.5)' : 'rgba(255,255,255,0.08)'
+                        e.target.style.borderColor = errors.message ? '#ef4444' : '#E5E5E5'
                         e.target.style.boxShadow = 'none'
                       }}
                     />
                   </div>
                   {errors.message && (
-                    <motion.p className="text-xs" style={{ color: 'rgba(239,68,68,0.8)' }} initial={{ opacity: 0, y: -5 }} animate={{ opacity: 1, y: 0 }}>
+                    <motion.p className="text-xs text-red-500" initial={{ opacity: 0, y: -5 }} animate={{ opacity: 1, y: 0 }}>
                       {errors.message}
                     </motion.p>
                   )}
@@ -359,7 +358,7 @@ export default function InitiateForm() {
                   </span>
                 </motion.button>
 
-                <p className="text-center text-xs" style={{ color: 'rgba(255,255,255,0.2)' }}>
+                <p className="text-center text-xs text-[#B0B0B0]">
                   Your details are secure. We'll connect via WhatsApp to discuss your project.
                 </p>
               </form>

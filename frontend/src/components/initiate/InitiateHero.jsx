@@ -15,7 +15,7 @@ export default function InitiateHero() {
   return (
     <section
       className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-24 pb-12"
-      style={{ background: '#0A0A0F' }}
+      style={{ background: '#FFFFFF' }}
     >
       <AnimatedBackground variant="minimal" particleCount={25} />
 
@@ -28,10 +28,10 @@ export default function InitiateHero() {
         >
           <div
             className="flex items-center gap-2 px-5 py-2.5 rounded-full"
-            style={{ background: 'rgba(44,110,73,0.12)', border: '1px solid rgba(44,110,73,0.3)' }}
+            style={{ background: 'rgba(44,110,73,0.08)', border: '1px solid rgba(44,110,73,0.2)' }}
           >
-            <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="font-mono text-xs tracking-widest uppercase" style={{ color: '#2C6E49' }}>
+            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold" style={{ color: '#2C6E49' }}>
               Currently Accepting Clients
             </span>
           </div>
@@ -43,13 +43,12 @@ export default function InitiateHero() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="block text-white">Let's build your</span>
+          <span className="block text-[#1A1A1A]">Let's build your</span>
           <span className="block text-gradient">growth engine.</span>
         </motion.h1>
 
         <motion.p
-          className="text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
-          style={{ color: 'rgba(255,255,255,0.5)' }}
+          className="text-xl max-w-2xl mx-auto mb-10 leading-relaxed text-[#5A5A5A]"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.25 }}
@@ -67,7 +66,7 @@ export default function InitiateHero() {
           {trust.map(({ icon: Icon, text }) => (
             <div key={text} className="flex items-center gap-2">
               <Icon size={15} style={{ color: '#2C6E49' }} />
-              <span className="text-sm" style={{ color: 'rgba(255,255,255,0.45)' }}>{text}</span>
+              <span className="text-sm text-[#8A8A8A]">{text}</span>
             </div>
           ))}
         </motion.div>

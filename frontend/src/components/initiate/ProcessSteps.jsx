@@ -15,7 +15,7 @@ export default function ProcessSteps() {
   return (
     <section
       className="py-24"
-      style={{ background: 'linear-gradient(180deg,#0A0A0F,#0D0D15,#0A0A0F)' }}
+      style={{ background: '#F8F9FA' }}
     >
       <div className="container-custom">
         <motion.div
@@ -25,11 +25,11 @@ export default function ProcessSteps() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-3xl lg:text-4xl font-display font-black mb-4">
+          <h2 className="text-3xl lg:text-4xl font-display font-black mb-4 text-[#1A1A1A]">
             What happens after
             <span className="text-gradient"> you submit</span>
           </h2>
-          <p className="text-lg" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <p className="text-lg text-[#5A5A5A]">
             A transparent, predictable process from hello to results.
           </p>
         </motion.div>
@@ -41,23 +41,23 @@ export default function ProcessSteps() {
               <motion.div
                 key={s.number}
                 className="relative p-7 rounded-3xl text-center"
-                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}
+                style={{ background: '#FFFFFF', border: '1px solid #E5E5E5', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -5, borderColor: `${s.color}30`, background: `${s.color}05` }}
+                whileHover={{ y: -5, borderColor: `${s.color}30`, background: `${s.color}02`, boxShadow: '0 8px 24px rgba(0,0,0,0.06)' }}
               >
                 <motion.div
                   className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5"
-                  style={{ background: `${s.color}15`, border: `1px solid ${s.color}25` }}
+                  style={{ background: `${s.color}10`, border: `1px solid ${s.color}20` }}
                   animate={{ y: [0, -6, 0] }}
                   transition={{ duration: 3 + i, repeat: Infinity, delay: i * 0.4 }}
                 >
                   <Icon size={26} style={{ color: s.color }} />
                 </motion.div>
-                <div className="font-mono text-xs mb-2" style={{ color: s.color }}>{s.number} — {s.time}</div>
-                <h3 className="font-display font-bold text-lg text-white mb-2">{s.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.4)' }}>{s.desc}</p>
+                <div className="font-mono text-xs mb-2 font-semibold" style={{ color: s.color }}>{s.number} — {s.time}</div>
+                <h3 className="font-display font-bold text-lg text-[#1A1A1A] mb-2">{s.title}</h3>
+                <p className="text-sm leading-relaxed text-[#8A8A8A]">{s.desc}</p>
               </motion.div>
             )
           })}
