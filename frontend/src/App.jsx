@@ -10,6 +10,7 @@ import PageTransition from '@/components/ui/PageTransition'
 import Capabilities from './pages/Capabilities'
 import VerifiedOutcomes from './pages/VerifiedOutcomes'
 import Operators from './pages/Operators'
+import Initiate from './pages/Initiate'
 
 // Lazy load pages
 const Interface = lazy(() => import('@/pages/Interface'))
@@ -85,6 +86,16 @@ function AnimatedRoutes() {
             </Suspense>
           </PageTransition>
         } />
+
+        <Route path="/initiate" element={
+          <PageTransition>
+            <Suspense fallback={<div className="min-h-screen bg-[#0A0A0F]" />}>
+              <Initiate />
+            </Suspense>
+          </PageTransition>
+        } />
+
+
       </Routes>
     </AnimatePresence>
   )
