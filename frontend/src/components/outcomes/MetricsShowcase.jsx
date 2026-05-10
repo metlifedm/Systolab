@@ -17,8 +17,8 @@ export default function MetricsShowcase() {
   const y2 = useTransform(scrollYProgress, [0, 1], [0, 60])
 
   return (
-    <section ref={containerRef} className="section-padding relative overflow-hidden" style={{ background: 'linear-gradient(180deg,#0A0A0F,#0D0D15,#0A0A0F)' }}>
-      <div className="absolute inset-0 dot-pattern opacity-20 pointer-events-none" />
+    <section ref={containerRef} className="section-padding relative overflow-hidden" style={{ background: '#F8F9FA' }}>
+      <div className="absolute inset-0 dot-pattern opacity-15 pointer-events-none" />
       <div className="container-custom relative z-10">
         <motion.div
           ref={ref}
@@ -29,13 +29,13 @@ export default function MetricsShowcase() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-            style={{ background: 'rgba(26,74,122,0.12)', border: '1px solid rgba(26,74,122,0.25)' }}
+            style={{ background: 'rgba(26,74,122,0.08)', border: '1px solid rgba(26,74,122,0.15)' }}
           >
-            <span className="font-mono text-xs tracking-widest uppercase" style={{ color: '#1A4A7A' }}>
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold" style={{ color: '#1A4A7A' }}>
               Performance Benchmarks
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4">
+          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4 text-[#1A1A1A]">
             Best-in-class metrics
             <span className="text-gradient"> across every discipline</span>
           </h2>
@@ -49,25 +49,21 @@ export default function MetricsShowcase() {
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="relative rounded-3xl p-8 overflow-hidden group"
-              style2={{
-                background: 'rgba(255,255,255,0.02)',
-                border: '1px solid rgba(255,255,255,0.05)',
-              }}
             >
               <div
                 className="relative rounded-3xl p-8 overflow-hidden"
                 style={{
-                  background: 'rgba(255,255,255,0.02)',
-                  border: `1px solid rgba(255,255,255,0.06)`,
+                  background: '#FFFFFF',
+                  border: `1px solid #E5E5E5`,
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
                 }}
               >
                 <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ background: `radial-gradient(circle at 0% 0%, ${m.color}10 0%, transparent 60%)` }} />
+                  style={{ background: `radial-gradient(circle at 0% 0%, ${m.color}06 0%, transparent 60%)` }} />
 
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-3 h-3 rounded-full" style={{ background: m.color }} />
-                  <span className="font-mono text-xs tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.35)' }}>
+                  <span className="font-mono text-xs tracking-widest uppercase font-medium text-[#8A8A8A]">
                     {m.category}
                   </span>
                 </div>
@@ -76,10 +72,10 @@ export default function MetricsShowcase() {
                     <div
                       key={label}
                       className="p-4 rounded-2xl"
-                      style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)' }}
+                      style={{ background: '#F8F9FA', border: '1px solid #E5E5E5' }}
                     >
                       <div className="text-3xl font-display font-black mb-1" style={{ color: m.color }}>{val}</div>
-                      <div className="text-xs" style={{ color: 'rgba(255,255,255,0.35)' }}>{label}</div>
+                      <div className="text-xs text-[#8A8A8A]">{label}</div>
                     </div>
                   ))}
                 </div>

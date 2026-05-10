@@ -17,9 +17,9 @@ export default function OutcomesStats() {
   return (
     <section
       className="py-24 relative overflow-hidden"
-      style={{ background: 'linear-gradient(180deg, #0A0A0F, #0D0D15, #0A0A0F)' }}
+      style={{ background: '#FFFFFF' }}
     >
-      <div className="absolute inset-0 grid-pattern opacity-20 pointer-events-none" />
+      <div className="absolute inset-0 grid-pattern opacity-10 pointer-events-none" />
       <div className="container-custom" ref={ref}>
         <motion.div
           className="text-center mb-16"
@@ -29,13 +29,13 @@ export default function OutcomesStats() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-            style={{ background: 'rgba(26,74,122,0.12)', border: '1px solid rgba(26,74,122,0.25)' }}
+            style={{ background: 'rgba(26,74,122,0.08)', border: '1px solid rgba(26,74,122,0.15)' }}
           >
-            <span className="font-mono text-xs tracking-widest uppercase" style={{ color: '#1A4A7A' }}>
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold" style={{ color: '#1A4A7A' }}>
               Aggregate Metrics
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4">
+          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4 text-[#1A1A1A]">
             The numbers across
             <span className="text-gradient"> our entire portfolio</span>
           </h2>
@@ -47,22 +47,23 @@ export default function OutcomesStats() {
               key={s.label}
               className="relative p-8 rounded-3xl text-center group overflow-hidden"
               style={{
-                background: 'rgba(255,255,255,0.02)',
-                border: '1px solid rgba(255,255,255,0.05)',
+                background: '#F8F9FA',
+                border: '1px solid #E5E5E5',
               }}
               initial={{ opacity: 0, y: 40, scale: 0.96 }}
               animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{
                 borderColor: `${s.color}35`,
-                background: `${s.color}05`,
+                background: `${s.color}04`,
                 y: -4,
+                boxShadow: '0 8px 24px rgba(0,0,0,0.06)',
               }}
             >
               <motion.div
                 className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 style={{
-                  background: `radial-gradient(circle at 50% 100%, ${s.color}10 0%, transparent 60%)`,
+                  background: `radial-gradient(circle at 50% 100%, ${s.color}08 0%, transparent 60%)`,
                 }}
               />
               <div className="relative z-10">
@@ -76,8 +77,8 @@ export default function OutcomesStats() {
                   )}
                   {s.suffix}
                 </div>
-                <h3 className="font-display font-bold text-white text-lg mb-1">{s.label}</h3>
-                <p className="text-sm" style={{ color: 'rgba(255,255,255,0.3)' }}>{s.sub}</p>
+                <h3 className="font-display font-bold text-[#1A1A1A] text-lg mb-1">{s.label}</h3>
+                <p className="text-sm text-[#8A8A8A]">{s.sub}</p>
               </div>
             </motion.div>
           ))}

@@ -133,9 +133,10 @@ function CaseCard({ c, index }) {
       className={`relative rounded-3xl overflow-hidden group ${c.featured ? 'md:col-span-2' : ''}`}
       style={{
         background: hovered
-          ? `linear-gradient(135deg, ${c.color}10, rgba(255,255,255,0.01))`
-          : 'rgba(255,255,255,0.02)',
-        border: `1px solid ${hovered ? c.color + '30' : 'rgba(255,255,255,0.06)'}`,
+          ? `linear-gradient(135deg, ${c.color}06, #FFFFFF)`
+          : '#FFFFFF',
+        border: `1px solid ${hovered ? c.color + '30' : '#E5E5E5'}`,
+        boxShadow: hovered ? '0 8px 24px rgba(0,0,0,0.06)' : '0 1px 3px rgba(0,0,0,0.04)',
         transition: 'all 0.4s cubic-bezier(0.22,1,0.36,1)',
       }}
       initial={{ opacity: 0, y: 40 }}
@@ -149,7 +150,7 @@ function CaseCard({ c, index }) {
       <motion.div
         className="absolute -top-20 -right-20 w-64 h-64 rounded-full pointer-events-none"
         style={{
-          background: `radial-gradient(circle, ${c.color}15 0%, transparent 70%)`,
+          background: `radial-gradient(circle, ${c.color}10 0%, transparent 70%)`,
         }}
         animate={{ opacity: hovered ? 1 : 0 }}
         transition={{ duration: 0.4 }}
@@ -166,15 +167,15 @@ function CaseCard({ c, index }) {
               {c.logo}
             </div>
             <div>
-              <div className="font-display font-bold text-white">{c.client}</div>
+              <div className="font-display font-bold text-[#1A1A1A]">{c.client}</div>
               <div className="flex items-center gap-2 mt-0.5">
                 <span
-                  className="text-xs font-mono px-2 py-0.5 rounded-full"
-                  style={{ background: `${c.color}15`, color: c.color }}
+                  className="text-xs font-mono px-2 py-0.5 rounded-full font-medium"
+                  style={{ background: `${c.color}10`, color: c.color }}
                 >
                   {c.industry}
                 </span>
-                <span className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>{c.service}</span>
+                <span className="text-xs text-[#8A8A8A]">{c.service}</span>
               </div>
             </div>
           </div>
@@ -186,10 +187,10 @@ function CaseCard({ c, index }) {
         </div>
 
         {/* Headline */}
-        <h3 className={`font-display font-bold text-white mb-3 leading-tight ${c.featured ? 'text-2xl lg:text-3xl' : 'text-xl'}`}>
+        <h3 className={`font-display font-bold text-[#1A1A1A] mb-3 leading-tight ${c.featured ? 'text-2xl lg:text-3xl' : 'text-xl'}`}>
           {c.headline}
         </h3>
-        <p className="text-sm leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.45)' }}>
+        <p className="text-sm leading-relaxed mb-6 text-[#5A5A5A]">
           {c.description}
         </p>
 
@@ -200,14 +201,14 @@ function CaseCard({ c, index }) {
               key={label}
               className="p-3 rounded-xl text-center"
               style={{
-                background: 'rgba(255,255,255,0.03)',
-                border: '1px solid rgba(255,255,255,0.05)',
+                background: '#F8F9FA',
+                border: '1px solid #E5E5E5',
               }}
             >
               <div className="font-display font-black text-lg mb-0.5" style={{ color: c.color }}>
                 {val}
               </div>
-              <div className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>{label}</div>
+              <div className="text-xs text-[#8A8A8A]">{label}</div>
             </div>
           ))}
         </div>
@@ -216,12 +217,12 @@ function CaseCard({ c, index }) {
         <div
           className="p-4 rounded-2xl mb-6 italic"
           style={{
-            background: `${c.color}08`,
-            border: `1px solid ${c.color}15`,
+            background: `${c.color}06`,
+            border: `1px solid ${c.color}12`,
           }}
         >
-          <p className="text-sm mb-1" style={{ color: 'rgba(255,255,255,0.55)' }}>"{c.quote}"</p>
-          <span className="text-xs font-mono" style={{ color: c.color }}>— {c.author}</span>
+          <p className="text-sm mb-1 text-[#5A5A5A]">"{c.quote}"</p>
+          <span className="text-xs font-mono font-medium" style={{ color: c.color }}>— {c.author}</span>
         </div>
 
         <Link
@@ -246,7 +247,7 @@ export default function CaseStudiesGrid() {
     : cases.filter((c) => c.industry === activeFilter)
 
   return (
-    <section className="section-padding" style={{ background: '#0A0A0F' }}>
+    <section className="section-padding" style={{ background: '#F8F9FA' }}>
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -257,17 +258,17 @@ export default function CaseStudiesGrid() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-            style={{ background: 'rgba(26,74,122,0.12)', border: '1px solid rgba(26,74,122,0.25)' }}
+            style={{ background: 'rgba(26,74,122,0.08)', border: '1px solid rgba(26,74,122,0.15)' }}
           >
-            <span className="font-mono text-xs tracking-widest uppercase" style={{ color: '#1A4A7A' }}>
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold" style={{ color: '#1A4A7A' }}>
               Case Studies
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4">
+          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4 text-[#1A1A1A]">
             Every industry.
             <span className="text-gradient"> Every outcome.</span>
           </h2>
-          <p className="text-lg max-w-2xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <p className="text-lg max-w-2xl mx-auto mb-10 text-[#5A5A5A]">
             Deep-dive into verified client transformations across multiple industries and growth stages.
           </p>
 
@@ -279,9 +280,9 @@ export default function CaseStudiesGrid() {
                 onClick={() => setActiveFilter(f)}
                 className="px-5 py-2 rounded-full text-sm font-medium transition-all duration-200"
                 style={{
-                  background: activeFilter === f ? 'linear-gradient(135deg,#1A4A7A,#2563EB)' : 'rgba(255,255,255,0.04)',
-                  border: `1px solid ${activeFilter === f ? 'transparent' : 'rgba(255,255,255,0.08)'}`,
-                  color: activeFilter === f ? 'white' : 'rgba(255,255,255,0.5)',
+                  background: activeFilter === f ? 'linear-gradient(135deg,#1A4A7A,#2563EB)' : '#F1F3F5',
+                  border: activeFilter === f ? 'none' : '1px solid #E5E5E5',
+                  color: activeFilter === f ? 'white' : '#5A5A5A',
                 }}
               >
                 {f}
