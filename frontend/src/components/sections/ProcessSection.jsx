@@ -82,34 +82,33 @@ function StepCard({ step, index }) {
           <div
             className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
             style={{
-              background: `${step.color}15`,
-              border: `1px solid ${step.color}25`,
+              background: `${step.color}10`,
+              border: `1px solid ${step.color}20`,
             }}
           >
             <Icon size={24} style={{ color: step.color }} />
           </div>
           <div>
             <span
-              className="font-mono text-xs tracking-widest"
+              className="font-mono text-xs tracking-widest font-medium"
               style={{ color: step.color }}
             >
               {step.number} — {step.duration}
             </span>
-            <h3 className="text-2xl font-display font-bold text-white mt-0.5">
+            <h3 className="text-2xl font-display font-bold text-[#1A1A1A] mt-0.5">
               {step.title}
             </h3>
           </div>
         </div>
 
-        <p className="text-base leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.5)' }}>
+        <p className="text-base leading-relaxed mb-6 text-[#5A5A5A]">
           {step.description}
         </p>
 
         {/* Deliverables */}
         <div>
           <span
-            className="font-mono text-xs tracking-widest uppercase mb-3 block"
-            style={{ color: 'rgba(255,255,255,0.25)' }}
+            className="font-mono text-xs tracking-widest uppercase mb-3 block text-[#8A8A8A]"
           >
             Deliverables
           </span>
@@ -119,9 +118,9 @@ function StepCard({ step, index }) {
                 key={d}
                 className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm"
                 style={{
-                  background: 'rgba(255,255,255,0.02)',
-                  border: '1px solid rgba(255,255,255,0.05)',
-                  color: 'rgba(255,255,255,0.5)',
+                  background: '#F8F9FA',
+                  border: '1px solid #E5E5E5',
+                  color: '#5A5A5A',
                 }}
               >
                 <div
@@ -145,17 +144,18 @@ function StepCard({ step, index }) {
           <div
             className="relative rounded-3xl p-8 overflow-hidden"
             style={{
-              background: `linear-gradient(135deg, ${step.color}12, rgba(255,255,255,0.01))`,
-              border: `1px solid ${step.color}25`,
+              background: `linear-gradient(135deg, ${step.color}06, #FFFFFF)`,
+              border: `1px solid ${step.color}20`,
+              boxShadow: '0 4px 16px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.02)',
             }}
           >
             {/* Grid pattern inside card */}
-            <div className="absolute inset-0 grid-pattern opacity-30 rounded-3xl" />
+            <div className="absolute inset-0 grid-pattern opacity-10 rounded-3xl" />
 
             {/* Large number */}
             <div
               className="absolute -top-4 -right-4 font-display font-black text-[8rem] leading-none select-none pointer-events-none"
-              style={{ color: `${step.color}08` }}
+              style={{ color: `${step.color}06` }}
             >
               {step.number}
             </div>
@@ -165,9 +165,9 @@ function StepCard({ step, index }) {
               <motion.div
                 className="w-24 h-24 rounded-3xl flex items-center justify-center mb-6"
                 style={{
-                  background: `linear-gradient(135deg, ${step.color}25, ${step.color}10)`,
-                  border: `1px solid ${step.color}30`,
-                  boxShadow: `0 20px 40px ${step.color}15`,
+                  background: `linear-gradient(135deg, ${step.color}15, ${step.color}05)`,
+                  border: `1px solid ${step.color}20`,
+                  boxShadow: `0 8px 20px ${step.color}08`,
                 }}
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: index * 0.5 }}
@@ -175,17 +175,17 @@ function StepCard({ step, index }) {
                 <Icon size={36} style={{ color: step.color }} />
               </motion.div>
 
-              <h4 className="text-xl font-display font-bold text-white mb-2">
+              <h4 className="text-xl font-display font-bold text-[#1A1A1A] mb-2">
                 {step.title}
               </h4>
               <div
                 className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full"
                 style={{
-                  background: `${step.color}15`,
-                  border: `1px solid ${step.color}25`,
+                  background: `${step.color}08`,
+                  border: `1px solid ${step.color}15`,
                 }}
               >
-                <span className="font-mono text-sm" style={{ color: step.color }}>
+                <span className="font-mono text-sm font-medium" style={{ color: step.color }}>
                   {step.duration}
                 </span>
               </div>
@@ -201,7 +201,7 @@ function StepCard({ step, index }) {
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            <ArrowDown size={20} style={{ color: 'rgba(26,74,122,0.4)' }} />
+            <ArrowDown size={20} style={{ color: '#C0C0C0' }} />
           </motion.div>
         </div>
       )}
@@ -216,16 +216,16 @@ export default function ProcessSection() {
     <section
       className="section-padding relative overflow-hidden"
       style={{
-        background: 'linear-gradient(180deg, #0A0A0F 0%, #0D0D14 50%, #0A0A0F 100%)',
+        background: '#FFFFFF',
       }}
     >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 dot-pattern opacity-20" />
+        <div className="absolute inset-0 dot-pattern opacity-15" />
         <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-10"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full opacity-20"
           style={{
-            background: 'radial-gradient(circle, rgba(26,74,122,0.5) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(26,74,122,0.08) 0%, transparent 70%)',
           }}
         />
       </div>
@@ -235,7 +235,7 @@ export default function ProcessSection() {
         <motion.div
           className="h-full w-full"
           style={{
-            background: 'linear-gradient(180deg, transparent, rgba(26,74,122,0.3), rgba(44,110,73,0.3), transparent)',
+            background: 'linear-gradient(180deg, transparent, rgba(26,74,122,0.25), rgba(44,110,73,0.25), transparent)',
           }}
           initial={{ scaleY: 0 }}
           animate={inView ? { scaleY: 1 } : {}}
@@ -255,21 +255,21 @@ export default function ProcessSection() {
           <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
             style={{
-              background: 'rgba(26,74,122,0.12)',
-              border: '1px solid rgba(26,74,122,0.25)',
+              background: 'rgba(26,74,122,0.08)',
+              border: '1px solid rgba(26,74,122,0.15)',
             }}
           >
-            <span className="font-mono text-xs tracking-widest uppercase"
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold"
               style={{ color: '#1A4A7A' }}>
               Our Process
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-display font-black mb-6">
+          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-display font-black mb-6 text-[#1A1A1A]">
             From zero to
             <br />
             <span className="text-gradient">market dominance</span>
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <p className="text-lg max-w-2xl mx-auto text-[#5A5A5A]">
             A proven 5-phase system refined across 200+ engagements.
             Predictable, repeatable, and designed to compound results over time.
           </p>

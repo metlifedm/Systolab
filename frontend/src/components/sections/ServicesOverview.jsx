@@ -32,7 +32,7 @@ const services = [
     metric: '8.7x',
     metricLabel: 'Avg. ROAS',
     color: '#1A4A7A',
-    gradient: 'linear-gradient(135deg, rgba(26,74,122,0.15), rgba(37,99,235,0.08))',
+    gradient: 'linear-gradient(135deg, rgba(26,74,122,0.06), rgba(37,99,235,0.03))',
   },
   {
     id: 'seo',
@@ -52,7 +52,7 @@ const services = [
     metric: '+340%',
     metricLabel: 'Organic Traffic',
     color: '#2C6E49',
-    gradient: 'linear-gradient(135deg, rgba(44,110,73,0.15), rgba(44,110,73,0.05))',
+    gradient: 'linear-gradient(135deg, rgba(44,110,73,0.06), rgba(44,110,73,0.02))',
   },
   {
     id: 'brand',
@@ -72,7 +72,7 @@ const services = [
     metric: '3.2x',
     metricLabel: 'Brand Recall',
     color: '#1A4A7A',
-    gradient: 'linear-gradient(135deg, rgba(26,74,122,0.15), rgba(26,74,122,0.05))',
+    gradient: 'linear-gradient(135deg, rgba(26,74,122,0.06), rgba(26,74,122,0.02))',
   },
   {
     id: 'content',
@@ -92,7 +92,7 @@ const services = [
     metric: '12M+',
     metricLabel: 'Monthly Impressions',
     color: '#2C6E49',
-    gradient: 'linear-gradient(135deg, rgba(44,110,73,0.15), rgba(44,110,73,0.05))',
+    gradient: 'linear-gradient(135deg, rgba(44,110,73,0.06), rgba(44,110,73,0.02))',
   },
   {
     id: 'social',
@@ -112,7 +112,7 @@ const services = [
     metric: '+580%',
     metricLabel: 'Engagement Rate',
     color: '#1A4A7A',
-    gradient: 'linear-gradient(135deg, rgba(26,74,122,0.15), rgba(26,74,122,0.05))',
+    gradient: 'linear-gradient(135deg, rgba(26,74,122,0.06), rgba(26,74,122,0.02))',
   },
   {
     id: 'analytics',
@@ -132,7 +132,7 @@ const services = [
     metric: '98%',
     metricLabel: 'Data Accuracy',
     color: '#2C6E49',
-    gradient: 'linear-gradient(135deg, rgba(44,110,73,0.15), rgba(44,110,73,0.05))',
+    gradient: 'linear-gradient(135deg, rgba(44,110,73,0.06), rgba(44,110,73,0.02))',
   },
 ]
 
@@ -145,8 +145,9 @@ function ServiceCard({ service, index, isActive, onClick }) {
       ref={ref}
       className="relative rounded-2xl cursor-pointer group overflow-hidden"
       style={{
-        background: isActive ? service.gradient : 'rgba(255,255,255,0.02)',
-        border: `1px solid ${isActive ? service.color + '40' : 'rgba(255,255,255,0.05)'}`,
+        background: isActive ? service.gradient : '#FFFFFF',
+        border: `1px solid ${isActive ? service.color + '30' : '#E5E5E5'}`,
+        boxShadow: isActive ? '0 4px 12px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02)' : 'none',
         transition: 'all 0.35s cubic-bezier(0.22, 1, 0.36, 1)',
       }}
       initial={{ opacity: 0, y: 30 }}
@@ -157,7 +158,7 @@ function ServiceCard({ service, index, isActive, onClick }) {
         ease: [0.22, 1, 0.36, 1],
       }}
       onClick={onClick}
-      whileHover={{ y: isActive ? 0 : -3 }}
+      whileHover={{ y: isActive ? 0 : -3, boxShadow: isActive ? undefined : '0 8px 24px rgba(0,0,0,0.06)' }}
     >
       <div className="p-6">
         <div className="flex items-start justify-between mb-5">
@@ -165,22 +166,22 @@ function ServiceCard({ service, index, isActive, onClick }) {
             <div
               className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300"
               style={{
-                background: isActive ? `${service.color}25` : 'rgba(255,255,255,0.04)',
-                border: `1px solid ${isActive ? service.color + '35' : 'rgba(255,255,255,0.06)'}`,
+                background: isActive ? `${service.color}12` : '#F8F9FA',
+                border: `1px solid ${isActive ? service.color + '20' : '#E5E5E5'}`,
               }}
             >
-              <Icon size={20} style={{ color: isActive ? service.color : 'rgba(255,255,255,0.4)' }} />
+              <Icon size={20} style={{ color: isActive ? service.color : '#8A8A8A' }} />
             </div>
             <div>
               <span
                 className="font-mono text-xs block mb-0.5"
-                style={{ color: isActive ? service.color : 'rgba(255,255,255,0.2)' }}
+                style={{ color: isActive ? service.color : '#B0B0B0' }}
               >
                 {service.number}
               </span>
               <h3
                 className="font-display font-bold text-base transition-colors"
-                style={{ color: isActive ? 'white' : 'rgba(255,255,255,0.7)' }}
+                style={{ color: isActive ? '#1A1A1A' : '#5A5A5A' }}
               >
                 {service.title}
               </h3>
@@ -190,7 +191,7 @@ function ServiceCard({ service, index, isActive, onClick }) {
             size={18}
             className="transition-transform duration-300 flex-shrink-0"
             style={{
-              color: isActive ? service.color : 'rgba(255,255,255,0.15)',
+              color: isActive ? service.color : '#C0C0C0',
               transform: isActive ? 'rotate(90deg)' : 'rotate(0deg)',
             }}
           />
@@ -205,16 +206,14 @@ function ServiceCard({ service, index, isActive, onClick }) {
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p className="text-sm leading-relaxed mb-5 pt-2"
-                style={{ color: 'rgba(255,255,255,0.5)' }}>
+              <p className="text-sm leading-relaxed mb-5 pt-2 text-[#5A5A5A]">
                 {service.description}
               </p>
 
               {/* Features */}
               <ul className="flex flex-col gap-2 mb-6">
                 {service.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2.5 text-sm"
-                    style={{ color: 'rgba(255,255,255,0.55)' }}>
+                  <li key={f} className="flex items-center gap-2.5 text-sm text-[#5A5A5A]">
                     <div
                       className="w-1.5 h-1.5 rounded-full flex-shrink-0"
                       style={{ background: service.color }}
@@ -229,14 +228,14 @@ function ServiceCard({ service, index, isActive, onClick }) {
                 <div
                   className="px-4 py-2 rounded-xl"
                   style={{
-                    background: `${service.color}15`,
-                    border: `1px solid ${service.color}25`,
+                    background: `${service.color}08`,
+                    border: `1px solid ${service.color}15`,
                   }}
                 >
                   <div className="font-display font-black text-xl" style={{ color: service.color }}>
                     {service.metric}
                   </div>
-                  <div className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>
+                  <div className="text-xs text-[#8A8A8A]">
                     {service.metricLabel}
                   </div>
                 </div>
@@ -265,7 +264,7 @@ export default function ServicesOverview() {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
-    <section className="section-padding" style={{ background: '#0A0A0F' }}>
+    <section className="section-padding" style={{ background: '#FFFFFF' }}>
       <div className="container-custom">
         {/* Header */}
         <motion.div
@@ -278,21 +277,21 @@ export default function ServicesOverview() {
           <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
             style={{
-              background: 'rgba(26,74,122,0.12)',
-              border: '1px solid rgba(26,74,122,0.25)',
+              background: 'rgba(26,74,122,0.08)',
+              border: '1px solid rgba(26,74,122,0.15)',
             }}
           >
-            <span className="font-mono text-xs tracking-widest uppercase"
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold"
               style={{ color: '#1A4A7A' }}>
               Core Services
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-display font-black mb-6">
+          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-display font-black mb-6 text-[#1A1A1A]">
             Every service,
             <br />
             <span className="text-gradient">built to compound</span>
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <p className="text-lg max-w-2xl mx-auto text-[#5A5A5A]">
             Six integrated disciplines working together as one growth system.
             Each service amplifies the others, creating compounding returns over time.
           </p>
@@ -320,18 +319,19 @@ export default function ServicesOverview() {
         >
           <Link
             to="/capabilities"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold text-white transition-all duration-300"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold transition-all duration-300"
             style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: '#F8F9FA',
+              border: '1px solid #E5E5E5',
+              color: '#1A1A1A',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'rgba(26,74,122,0.15)'
-              e.currentTarget.style.borderColor = 'rgba(26,74,122,0.3)'
+              e.currentTarget.style.background = '#F1F3F5'
+              e.currentTarget.style.borderColor = '#C0C0C0'
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(255,255,255,0.04)'
-              e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'
+              e.currentTarget.style.background = '#F8F9FA'
+              e.currentTarget.style.borderColor = '#E5E5E5'
             }}
           >
             <span>Explore All Capabilities</span>

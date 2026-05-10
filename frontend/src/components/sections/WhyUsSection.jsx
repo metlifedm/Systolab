@@ -71,8 +71,9 @@ function PillarCard({ pillar, index }) {
       ref={ref}
       className="relative p-8 rounded-3xl group cursor-default overflow-hidden"
       style={{
-        background: 'rgba(255,255,255,0.02)',
-        border: '1px solid rgba(255,255,255,0.05)',
+        background: '#FFFFFF',
+        border: '1px solid #E5E5E5',
+        boxShadow: '0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.02)',
       }}
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -84,7 +85,8 @@ function PillarCard({ pillar, index }) {
       whileHover={{
         y: -6,
         borderColor: `${pillar.color}40`,
-        background: `${pillar.color}06`,
+        background: '#FFFFFF',
+        boxShadow: '0 12px 32px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.04)',
         transition: { duration: 0.3 },
       }}
     >
@@ -92,7 +94,7 @@ function PillarCard({ pillar, index }) {
       <motion.div
         className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{
-          background: `radial-gradient(circle at 30% 30%, ${pillar.color}12 0%, transparent 60%)`,
+          background: `radial-gradient(circle at 30% 30%, ${pillar.color}08 0%, transparent 60%)`,
         }}
       />
 
@@ -100,11 +102,11 @@ function PillarCard({ pillar, index }) {
       <div
         className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full mb-6"
         style={{
-          background: `${pillar.color}12`,
-          border: `1px solid ${pillar.color}25`,
+          background: `${pillar.color}10`,
+          border: `1px solid ${pillar.color}20`,
         }}
       >
-        <span className="font-mono text-xs" style={{ color: pillar.color }}>
+        <span className="font-mono text-xs font-medium" style={{ color: pillar.color }}>
           {pillar.tag}
         </span>
       </div>
@@ -113,17 +115,17 @@ function PillarCard({ pillar, index }) {
       <div
         className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110"
         style={{
-          background: `${pillar.color}15`,
-          border: `1px solid ${pillar.color}20`,
+          background: `${pillar.color}08`,
+          border: `1px solid ${pillar.color}15`,
         }}
       >
         <Icon size={26} style={{ color: pillar.color }} />
       </div>
 
-      <h3 className="text-xl font-display font-bold text-white mb-3">
+      <h3 className="text-xl font-display font-bold text-[#1A1A1A] mb-3">
         {pillar.title}
       </h3>
-      <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>
+      <p className="text-sm leading-relaxed text-[#5A5A5A]">
         {pillar.description}
       </p>
 
@@ -131,7 +133,7 @@ function PillarCard({ pillar, index }) {
       <motion.div
         className="absolute bottom-0 left-8 right-8 h-[1px]"
         style={{
-          background: `linear-gradient(90deg, transparent, ${pillar.color}50, transparent)`,
+          background: `linear-gradient(90deg, transparent, ${pillar.color}30, transparent)`,
         }}
         initial={{ scaleX: 0 }}
         animate={inView ? { scaleX: 1 } : {}}
@@ -145,7 +147,7 @@ export default function WhyUsSection() {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
-    <section className="section-padding" style={{ background: '#0A0A0F' }}>
+    <section className="section-padding" style={{ background: '#F8F9FA' }}>
       <div className="container-custom">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-20">
@@ -158,15 +160,15 @@ export default function WhyUsSection() {
             <div
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
               style={{
-                background: 'rgba(26,74,122,0.12)',
-                border: '1px solid rgba(26,74,122,0.25)',
+                background: 'rgba(26,74,122,0.08)',
+                border: '1px solid rgba(26,74,122,0.15)',
               }}
             >
-              <span className="font-mono text-xs tracking-widest uppercase" style={{ color: '#1A4A7A' }}>
+              <span className="font-mono text-xs tracking-widest uppercase font-semibold" style={{ color: '#1A4A7A' }}>
                 Why APEX
               </span>
             </div>
-            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-display font-black leading-tight">
+            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-display font-black leading-tight text-[#1A1A1A]">
               Built different.
               <br />
               <span className="text-gradient">Built to win.</span>
@@ -178,7 +180,7 @@ export default function WhyUsSection() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="text-lg leading-relaxed mb-8" style={{ color: 'rgba(255,255,255,0.45)' }}>
+            <p className="text-lg leading-relaxed mb-8 text-[#5A5A5A]">
               Most agencies sell deliverables. We sell outcomes. Our obsessive focus
               on measurable revenue impact, combined with AI-native infrastructure,
               creates an unfair advantage for every client we partner with.

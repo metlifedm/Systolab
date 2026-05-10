@@ -60,15 +60,17 @@ function TechCard({ category, index }) {
       ref={ref}
       className="relative p-6 rounded-2xl overflow-hidden group"
       style={{
-        background: 'rgba(255,255,255,0.02)',
-        border: '1px solid rgba(255,255,255,0.05)',
+        background: '#FFFFFF',
+        border: '1px solid #E5E5E5',
+        boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
       }}
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{
         borderColor: `${category.color}30`,
-        background: `${category.color}05`,
+        background: `${category.color}02`,
+        boxShadow: '0 8px 24px rgba(0,0,0,0.06)',
       }}
     >
       {/* Header */}
@@ -78,8 +80,8 @@ function TechCard({ category, index }) {
           style={{ background: category.color }}
         />
         <span
-          className="font-mono text-xs tracking-widest uppercase"
-          style={{ color: 'rgba(255,255,255,0.35)' }}
+          className="font-mono text-xs tracking-widest uppercase font-medium"
+          style={{ color: '#8A8A8A' }}
         >
           {category.title}
         </span>
@@ -92,15 +94,15 @@ function TechCard({ category, index }) {
             key={tool.name}
             className="flex flex-col items-center justify-center p-3 rounded-xl text-center group/tool transition-all duration-200 cursor-default"
             style={{
-              background: 'rgba(255,255,255,0.02)',
-              border: '1px solid rgba(255,255,255,0.04)',
+              background: '#F8F9FA',
+              border: '1px solid #E5E5E5',
             }}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.4, delay: index * 0.1 + i * 0.04 }}
             whileHover={{
-              background: `${category.color}12`,
-              borderColor: `${category.color}25`,
+              background: `${category.color}08`,
+              borderColor: `${category.color}20`,
               y: -2,
             }}
             title={tool.name}
@@ -113,7 +115,7 @@ function TechCard({ category, index }) {
             </span>
             <span
               className="text-[10px] leading-tight"
-              style={{ color: 'rgba(255,255,255,0.25)' }}
+              style={{ color: '#8A8A8A' }}
             >
               {tool.name.split(' ')[0]}
             </span>
@@ -131,7 +133,7 @@ export default function TechStackSection() {
     <section
       className="section-padding"
       style={{
-        background: 'linear-gradient(180deg, #0A0A0F, #0C0C12)',
+        background: '#F8F9FA',
       }}
     >
       <div className="container-custom">
@@ -146,21 +148,21 @@ export default function TechStackSection() {
           <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
             style={{
-              background: 'rgba(26,74,122,0.12)',
-              border: '1px solid rgba(26,74,122,0.25)',
+              background: 'rgba(26,74,122,0.08)',
+              border: '1px solid rgba(26,74,122,0.15)',
             }}
           >
-            <span className="font-mono text-xs tracking-widest uppercase"
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold"
               style={{ color: '#1A4A7A' }}>
               Tech Infrastructure
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-display font-black mb-6">
+          <h2 className="text-4xl lg:text-5xl font-display font-black mb-6 text-[#1A1A1A]">
             Powered by the
             <br />
             <span className="text-gradient">world's best tools</span>
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <p className="text-lg max-w-2xl mx-auto text-[#5A5A5A]">
             Our technology stack combines 24+ best-in-class platforms orchestrated
             by our proprietary AI layer for maximum performance.
           </p>
@@ -190,12 +192,13 @@ export default function TechStackSection() {
               key={sub}
               className="text-center p-5 rounded-2xl"
               style={{
-                background: 'rgba(255,255,255,0.02)',
-                border: '1px solid rgba(255,255,255,0.04)',
+                background: '#FFFFFF',
+                border: '1px solid #E5E5E5',
+                boxShadow: '0 1px 2px rgba(0,0,0,0.02)',
               }}
             >
-              <div className="text-2xl font-display font-black text-white mb-1">{label}</div>
-              <div className="text-xs font-mono" style={{ color: 'rgba(255,255,255,0.3)' }}>{sub}</div>
+              <div className="text-2xl font-display font-black text-[#1A1A1A] mb-1">{label}</div>
+              <div className="text-xs font-mono text-[#8A8A8A]">{sub}</div>
             </div>
           ))}
         </motion.div>
