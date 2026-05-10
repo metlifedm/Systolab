@@ -1,24 +1,30 @@
-import { useEffect } from "react"
+export const WHATSAPP_NUMBER = '15550000000' // Replace with real number
 
-export const useWhatsApp = () => {
-  useEffect(() => {
-    const script = document.createElement('script')
-    script.src = 'https://static.getbutton.io/widget-send-button/js/init.js'
-    script.async = true
-    script.onload = () => {
-      window.Widgets?.init({
-        whatsapp: '+1234567890', // Replace with your WhatsApp number
-      })
-    }
-    document.body.appendChild(script)
-  }, [])
+export function useWhatsApp() {
+  const openWhatsApp = (data) => {
+    const message = formatMessage(data)
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`
+    window.open(url, '_blank', 'noopener,noreferrer')
+  }
 
-  const openWhatsApp = (form) => {
-    const message = `Hi, I'm ${form.name}. I'm interested in learning more about your services.`
-    window.Widgets?.open({
-      whatsapp: '+1234567890',
-      message: message
-    })
+  const formatMessage = (data) => {
+    const lines = [
+      `🚀 *New Inquiry — APEX Digital*`,
+      ``,
+      `👤 *Name:* ${data.name || 'N/A'}`,
+      `🏢 *Business:* ${data.business || 'N/A'}`,
+      `📧 *Email:* ${data.email || 'N/A'}`,
+      `📞 *Phone:* ${data.phone || 'N/A'}`,
+    ]
+
+    if (data.revenue) lines.push(`💰 *Revenue:* ${data.revenue}`)
+    if (data.goal) lines.push(`🎯 *Goal:* ${data.goal}`)
+    if (data.services?.length) lines.push(`📋 *Services:* ${data.services.join(', ')}`)
+
+    lines.push(``, `💬 *Message:*`, data.message || 'N/A')
+    lines.push(``, `---`, `_Sent via APEX Digital website_`)
+
+    return encodeURIComponent(lines.join('\n'))
   }
 
   return { openWhatsApp }
