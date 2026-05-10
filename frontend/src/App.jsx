@@ -7,6 +7,7 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import ScrollProgress from '@/components/ui/ScrollProgress'
 import PageTransition from '@/components/ui/PageTransition'
+import Capabilities from './pages/Capabilities'
 
 // Lazy load pages
 const Interface = lazy(() => import('@/pages/Interface'))
@@ -58,6 +59,16 @@ function AnimatedRoutes() {
             </Suspense>
           </PageTransition>
         } />
+
+        <Route path="/capabilities" element={
+          <PageTransition>
+            <Suspense fallback={<div className="min-h-screen bg-[#0A0A0F]" />}>
+              <Capabilities />
+            </Suspense>
+          </PageTransition>
+        } />
+
+
       </Routes>
     </AnimatePresence>
   )
