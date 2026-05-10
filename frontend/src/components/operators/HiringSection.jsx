@@ -16,7 +16,7 @@ export default function HiringSection() {
   return (
     <section
       className="section-padding"
-      style={{ background: 'linear-gradient(180deg,#0A0A0F,#0D0D15,#0A0A0F)' }}
+      style={{ background: '#F8F9FA' }}
     >
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -28,18 +28,18 @@ export default function HiringSection() {
           >
             <div
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-              style={{ background: 'rgba(44,110,73,0.12)', border: '1px solid rgba(44,110,73,0.25)' }}
+              style={{ background: 'rgba(44,110,73,0.08)', border: '1px solid rgba(44,110,73,0.15)' }}
             >
-              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-              <span className="font-mono text-xs tracking-widest uppercase" style={{ color: '#2C6E49' }}>
+              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="font-mono text-xs tracking-widest uppercase font-semibold" style={{ color: '#2C6E49' }}>
                 We're Hiring
               </span>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-display font-black mb-6 leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-display font-black mb-6 leading-tight text-[#1A1A1A]">
               Join the team building the
               <span className="text-gradient"> future of growth</span>
             </h2>
-            <p className="text-lg leading-relaxed mb-8" style={{ color: 'rgba(255,255,255,0.45)' }}>
+            <p className="text-lg leading-relaxed mb-8 text-[#5A5A5A]">
               We're selective about who joins APEX. If you're world-class at what you do,
               obsessed with results, and thrive in an async remote environment —
               we want to talk.
@@ -49,7 +49,7 @@ export default function HiringSection() {
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl font-semibold text-white transition-all duration-300"
               style={{
                 background: 'linear-gradient(135deg,#1A4A7A,#2563EB)',
-                boxShadow: '0 15px 30px rgba(26,74,122,0.3)',
+                boxShadow: '0 8px 20px rgba(26,74,122,0.2)',
               }}
             >
               <span>Apply to Join APEX</span>
@@ -63,26 +63,28 @@ export default function HiringSection() {
                 key={role.title}
                 className="flex items-center justify-between p-6 rounded-2xl group cursor-pointer transition-all duration-300"
                 style={{
-                  background: 'rgba(255,255,255,0.02)',
-                  border: '1px solid rgba(255,255,255,0.05)',
+                  background: '#FFFFFF',
+                  border: '1px solid #E5E5E5',
+                  boxShadow: '0 1px 2px rgba(0,0,0,0.02)',
                 }}
                 initial={{ opacity: 0, x: 30 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.1 * i }}
                 whileHover={{
-                  background: `${role.color}08`,
+                  background: `${role.color}04`,
                   borderColor: `${role.color}25`,
                   x: 4,
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.04)',
                 }}
               >
                 <div>
-                  <h3 className="font-display font-bold text-white mb-1">{role.title}</h3>
+                  <h3 className="font-display font-bold text-[#1A1A1A] mb-1">{role.title}</h3>
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-mono px-2 py-0.5 rounded-full"
-                      style={{ background: `${role.color}15`, color: role.color }}>
+                    <span className="text-xs font-mono px-2 py-0.5 rounded-full font-medium"
+                      style={{ background: `${role.color}10`, color: role.color }}>
                       {role.type}
                     </span>
-                    <span className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>{role.location}</span>
+                    <span className="text-xs text-[#8A8A8A]">{role.location}</span>
                   </div>
                 </div>
                 <ArrowRight size={18} style={{ color: role.color }}

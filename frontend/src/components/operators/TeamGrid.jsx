@@ -37,14 +37,15 @@ function TeamCard({ member, index }) {
         <div
           className="absolute inset-0 rounded-3xl p-7 backface-hidden overflow-hidden"
           style={{
-            background: 'rgba(255,255,255,0.02)',
-            border: '1px solid rgba(255,255,255,0.06)',
+            background: '#FFFFFF',
+            border: '1px solid #E5E5E5',
+            boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
           }}
         >
           <motion.div
             className="absolute inset-0 rounded-3xl"
             style={{
-              background: `radial-gradient(circle at 100% 0%, ${member.color}12 0%, transparent 60%)`,
+              background: `radial-gradient(circle at 100% 0%, ${member.color}06 0%, transparent 60%)`,
             }}
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 4, repeat: Infinity, delay: index * 0.3 }}
@@ -58,31 +59,31 @@ function TeamCard({ member, index }) {
                 {member.initials}
               </div>
               <div
-                className="px-3 py-1 rounded-full text-xs font-mono"
-                style={{ background: `${member.color}15`, color: member.color, border: `1px solid ${member.color}25` }}
+                className="px-3 py-1 rounded-full text-xs font-mono font-medium"
+                style={{ background: `${member.color}10`, color: member.color, border: `1px solid ${member.color}15` }}
               >
                 {member.exp}
               </div>
             </div>
-            <h3 className="font-display font-bold text-xl text-white mb-1">{member.name}</h3>
-            <p className="text-sm mb-1" style={{ color: 'rgba(255,255,255,0.45)' }}>{member.role}</p>
-            <p className="text-xs font-mono mb-5" style={{ color: member.color }}>{member.specialty}</p>
+            <h3 className="font-display font-bold text-xl text-[#1A1A1A] mb-1">{member.name}</h3>
+            <p className="text-sm mb-1 text-[#5A5A5A]">{member.role}</p>
+            <p className="text-xs font-mono mb-5 font-medium" style={{ color: member.color }}>{member.specialty}</p>
             <div className="flex flex-wrap gap-1.5">
               {member.skills.map((s) => (
                 <span
                   key={s}
                   className="px-2.5 py-1 rounded-full text-xs"
                   style={{
-                    background: 'rgba(255,255,255,0.04)',
-                    border: '1px solid rgba(255,255,255,0.06)',
-                    color: 'rgba(255,255,255,0.4)',
+                    background: '#F8F9FA',
+                    border: '1px solid #E5E5E5',
+                    color: '#8A8A8A',
                   }}
                 >
                   {s}
                 </span>
               ))}
             </div>
-            <div className="absolute bottom-6 right-7 flex items-center gap-1 text-xs" style={{ color: 'rgba(255,255,255,0.2)' }}>
+            <div className="absolute bottom-6 right-7 flex items-center gap-1 text-xs" style={{ color: '#B0B0B0' }}>
               <span>Tap for bio</span>
               <ArrowRight size={11} />
             </div>
@@ -93,31 +94,32 @@ function TeamCard({ member, index }) {
         <div
           className="absolute inset-0 rounded-3xl p-7 backface-hidden overflow-hidden"
           style={{
-            background: `linear-gradient(135deg, ${member.color}15, rgba(255,255,255,0.01))`,
-            border: `1px solid ${member.color}25`,
+            background: `linear-gradient(135deg, ${member.color}06, #FFFFFF)`,
+            border: `1px solid ${member.color}20`,
+            boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
             transform: 'rotateY(180deg)',
           }}
         >
           <div className="flex flex-col h-full">
             <div className="mb-4">
-              <h3 className="font-display font-bold text-lg text-white mb-0.5">{member.name}</h3>
-              <p className="text-xs font-mono" style={{ color: member.color }}>{member.specialty}</p>
+              <h3 className="font-display font-bold text-lg text-[#1A1A1A] mb-0.5">{member.name}</h3>
+              <p className="text-xs font-mono font-medium" style={{ color: member.color }}>{member.specialty}</p>
             </div>
-            <p className="text-sm leading-relaxed flex-1" style={{ color: 'rgba(255,255,255,0.55)' }}>
+            <p className="text-sm leading-relaxed flex-1 text-[#5A5A5A]">
               {member.bio}
             </p>
             <div className="flex items-center gap-3 mt-4">
               <a href="#" className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200"
-                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}
+                style={{ background: '#F8F9FA', border: '1px solid #E5E5E5' }}
                 onClick={(e) => e.stopPropagation()}>
-                <Linkedin size={15} style={{ color: 'rgba(255,255,255,0.5)' }} />
+                <Linkedin size={15} style={{ color: '#8A8A8A' }} />
               </a>
               <a href="#" className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200"
-                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}
+                style={{ background: '#F8F9FA', border: '1px solid #E5E5E5' }}
                 onClick={(e) => e.stopPropagation()}>
-                <Twitter size={15} style={{ color: 'rgba(255,255,255,0.5)' }} />
+                <Twitter size={15} style={{ color: '#8A8A8A' }} />
               </a>
-              <span className="text-xs ml-auto" style={{ color: 'rgba(255,255,255,0.2)' }}>Tap to flip back</span>
+              <span className="text-xs ml-auto text-[#B0B0B0]">Tap to flip back</span>
             </div>
           </div>
         </div>
@@ -130,7 +132,7 @@ export default function TeamGrid() {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
-    <section className="section-padding" style={{ background: '#0A0A0F' }}>
+    <section className="section-padding" style={{ background: '#F8F9FA' }}>
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -141,17 +143,17 @@ export default function TeamGrid() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-            style={{ background: 'rgba(26,74,122,0.12)', border: '1px solid rgba(26,74,122,0.25)' }}
+            style={{ background: 'rgba(26,74,122,0.08)', border: '1px solid rgba(26,74,122,0.15)' }}
           >
-            <span className="font-mono text-xs tracking-widest uppercase" style={{ color: '#1A4A7A' }}>
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold" style={{ color: '#1A4A7A' }}>
               Core Team
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4">
+          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4 text-[#1A1A1A]">
             The operators behind
             <span className="text-gradient"> your growth</span>
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <p className="text-lg max-w-2xl mx-auto text-[#5A5A5A]">
             Tap any card to read their full story and track record.
           </p>
         </motion.div>

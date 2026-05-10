@@ -17,7 +17,7 @@ export default function ValuesSection() {
   return (
     <section
       className="section-padding"
-      style={{ background: 'linear-gradient(180deg,#0A0A0F,#0D0D15,#0A0A0F)' }}
+      style={{ background: '#FFFFFF' }}
     >
       <div className="container-custom">
         <motion.div
@@ -29,16 +29,16 @@ export default function ValuesSection() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-            style={{ background: 'rgba(26,74,122,0.12)', border: '1px solid rgba(26,74,122,0.25)' }}
+            style={{ background: 'rgba(26,74,122,0.08)', border: '1px solid rgba(26,74,122,0.15)' }}
           >
-            <span className="font-mono text-xs tracking-widest uppercase" style={{ color: '#1A4A7A' }}>
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold" style={{ color: '#1A4A7A' }}>
               Our Values
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4">
+          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4 text-[#1A1A1A]">
             The principles we operate by
           </h2>
-          <p className="text-lg max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <p className="text-lg max-w-xl mx-auto text-[#5A5A5A]">
             These aren't aspirational wall posters. They're the operating system every decision, hire, and client interaction runs on.
           </p>
         </motion.div>
@@ -51,8 +51,9 @@ export default function ValuesSection() {
                 key={v.title}
                 className="relative p-8 rounded-3xl group overflow-hidden"
                 style={{
-                  background: 'rgba(255,255,255,0.02)',
-                  border: '1px solid rgba(255,255,255,0.05)',
+                  background: '#FFFFFF',
+                  border: '1px solid #E5E5E5',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
                 }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -60,21 +61,22 @@ export default function ValuesSection() {
                 whileHover={{
                   y: -5,
                   borderColor: `${v.color}30`,
-                  background: `${v.color}05`,
+                  background: `${v.color}02`,
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.06)',
                 }}
               >
                 <motion.div
                   className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ background: `radial-gradient(circle at 20% 20%, ${v.color}12 0%, transparent 60%)` }}
+                  style={{ background: `radial-gradient(circle at 20% 20%, ${v.color}06 0%, transparent 60%)` }}
                 />
                 <div
                   className="w-13 h-13 w-[52px] h-[52px] rounded-2xl flex items-center justify-center mb-6"
-                  style={{ background: `${v.color}15`, border: `1px solid ${v.color}25` }}
+                  style={{ background: `${v.color}10`, border: `1px solid ${v.color}15` }}
                 >
                   <Icon size={24} style={{ color: v.color }} />
                 </div>
-                <h3 className="font-display font-bold text-xl text-white mb-3">{v.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                <h3 className="font-display font-bold text-xl text-[#1A1A1A] mb-3">{v.title}</h3>
+                <p className="text-sm leading-relaxed text-[#5A5A5A]">
                   {v.description}
                 </p>
               </motion.div>

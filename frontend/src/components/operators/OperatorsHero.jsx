@@ -16,7 +16,7 @@ export default function OperatorsHero() {
   return (
     <section
       className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-24"
-      style={{ background: '#0A0A0F' }}
+      style={{ background: '#FFFFFF' }}
     >
       <AnimatedBackground variant="minimal" particleCount={30} />
 
@@ -29,10 +29,10 @@ export default function OperatorsHero() {
         >
           <div
             className="flex items-center gap-2 px-5 py-2.5 rounded-full"
-            style={{ background: 'rgba(26,74,122,0.12)', border: '1px solid rgba(26,74,122,0.25)' }}
+            style={{ background: 'rgba(26,74,122,0.08)', border: '1px solid rgba(26,74,122,0.15)' }}
           >
             <Users size={13} style={{ color: '#1A4A7A' }} />
-            <span className="font-mono text-xs tracking-widest uppercase" style={{ color: '#1A4A7A' }}>
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold" style={{ color: '#1A4A7A' }}>
               The Team
             </span>
           </div>
@@ -44,14 +44,13 @@ export default function OperatorsHero() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="block text-white">Specialists, not</span>
-          <span className="block text-white">generalists.</span>
+          <span className="block text-[#1A1A1A]">Specialists, not</span>
+          <span className="block text-[#1A1A1A]">generalists.</span>
           <span className="block text-gradient">Elite, not average.</span>
         </motion.h1>
 
         <motion.p
-          className="text-xl max-w-3xl mx-auto mb-12 leading-relaxed"
-          style={{ color: 'rgba(255,255,255,0.5)' }}
+          className="text-xl max-w-3xl mx-auto mb-12 leading-relaxed text-[#5A5A5A]"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.25 }}
@@ -72,17 +71,17 @@ export default function OperatorsHero() {
             <div
               key={label}
               className="flex items-center gap-3 px-5 py-3 rounded-2xl"
-              style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
+              style={{ background: '#F8F9FA', border: '1px solid #E5E5E5' }}
             >
               <div
                 className="w-9 h-9 rounded-xl flex items-center justify-center"
-                style={{ background: 'rgba(26,74,122,0.15)', border: '1px solid rgba(26,74,122,0.25)' }}
+                style={{ background: 'rgba(26,74,122,0.10)', border: '1px solid rgba(26,74,122,0.15)' }}
               >
                 <Icon size={16} style={{ color: '#1A4A7A' }} />
               </div>
               <div className="text-left">
-                <div className="font-display font-black text-xl text-white">{val}</div>
-                <div className="text-xs" style={{ color: 'rgba(255,255,255,0.35)' }}>{label}</div>
+                <div className="font-display font-black text-xl text-[#1A1A1A]">{val}</div>
+                <div className="text-xs text-[#8A8A8A]">{label}</div>
               </div>
             </div>
           ))}
@@ -97,7 +96,7 @@ export default function OperatorsHero() {
           <Link
             to="/initiate"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold text-white"
-            style={{ background: 'linear-gradient(135deg,#1A4A7A,#2563EB)', boxShadow: '0 20px 40px rgba(26,74,122,0.3)' }}
+            style={{ background: 'linear-gradient(135deg,#1A4A7A,#2563EB)', boxShadow: '0 8px 20px rgba(26,74,122,0.2)' }}
           >
             <span>Work With Our Team</span>
             <ArrowRight size={18} />
