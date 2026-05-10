@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { motion, useScroll, useSpring } from 'framer-motion'
 
 export default function ScrollProgress() {
@@ -11,8 +10,11 @@ export default function ScrollProgress() {
 
   return (
     <motion.div
-      className="scroll-progress-bar"
-      style={{ scaleX }}
+      className="fixed top-0 left-0 right-0 z-[9998] h-[2px] origin-left"
+      style={{
+        scaleX,
+        background: 'linear-gradient(90deg, #1A4A7A, #2563EB, #2C6E49)',
+      }}
     />
   )
 }
