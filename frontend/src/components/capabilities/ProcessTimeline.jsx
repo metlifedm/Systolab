@@ -60,7 +60,7 @@ export default function ProcessTimeline() {
   return (
     <section
       className="section-padding overflow-hidden"
-      style={{ background: '#0A0A0F' }}
+      style={{ background: '#F8F9FA' }}
     >
       <div className="container-custom">
         {/* Header */}
@@ -74,20 +74,20 @@ export default function ProcessTimeline() {
           <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
             style={{
-              background: 'rgba(26,74,122,0.12)',
-              border: '1px solid rgba(26,74,122,0.25)',
+              background: 'rgba(26,74,122,0.08)',
+              border: '1px solid rgba(26,74,122,0.15)',
             }}
           >
-            <span className="font-mono text-xs tracking-widest uppercase"
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold"
               style={{ color: '#1A4A7A' }}>
               Engagement Timeline
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4">
+          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4 text-[#1A1A1A]">
             From sign-off to
             <span className="text-gradient"> scale in 30 days</span>
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <p className="text-lg max-w-2xl mx-auto text-[#5A5A5A]">
             A precise timeline engineered for speed without sacrificing strategy.
             Here's exactly what happens when you partner with APEX.
           </p>
@@ -97,7 +97,7 @@ export default function ProcessTimeline() {
         <div className="relative">
           {/* Horizontal line connector on desktop */}
           <div className="absolute top-16 left-0 right-0 h-px hidden lg:block"
-            style={{ background: 'linear-gradient(90deg, transparent, rgba(26,74,122,0.3), rgba(44,110,73,0.3), transparent)' }} />
+            style={{ background: 'linear-gradient(90deg, transparent, rgba(26,74,122,0.15), rgba(44,110,73,0.15), transparent)' }} />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
             {timeline.map((phase, i) => {
@@ -116,52 +116,43 @@ export default function ProcessTimeline() {
                 >
                   {/* Phase icon */}
                   <motion.div
-                    className="relative w-16 h-16 rounded-2xl flex items-center justify-center mb-4 z-10"
+                    className="relative w-16 h-16 rounded-2xl flex items-center justify-center mb-4 z-10 bg-white"
                     style={{
-                      background: `${phase.color}15`,
+                      background: '#FFFFFF',
                       border: `1px solid ${phase.color}30`,
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
                     }}
                     whileHover={{
-                      background: `${phase.color}25`,
+                      background: `${phase.color}04`,
+                      borderColor: `${phase.color}40`,
                       scale: 1.1,
                     }}
                     transition={{ duration: 0.2 }}
                   >
                     <Icon size={24} style={{ color: phase.color }} />
-                    {/* Node dot on line */}
-                    <div
-                      className="absolute -bottom-px w-3 h-3 rounded-full hidden lg:block"
-                      style={{
-                        background: phase.color,
-                        bottom: '-calc(1rem + 1px)',
-                        left: '50%',
-                        transform: 'translate(-50%, calc(100% + 4px))',
-                        boxShadow: `0 0 10px ${phase.color}`,
-                      }}
-                    />
                   </motion.div>
 
                   {/* Phase label */}
                   <div
                     className="inline-flex items-center justify-center px-3 py-1 rounded-full mb-3"
                     style={{
-                      background: `${phase.color}12`,
-                      border: `1px solid ${phase.color}20`,
+                      background: `${phase.color}08`,
+                      border: `1px solid ${phase.color}15`,
                     }}
                   >
-                    <span className="font-mono text-xs" style={{ color: phase.color }}>
+                    <span className="font-mono text-xs font-medium" style={{ color: phase.color }}>
                       {phase.duration}
                     </span>
                   </div>
 
-                  <h3 className="text-base font-display font-bold text-white mb-3">
+                  <h3 className="text-base font-display font-bold text-[#1A1A1A] mb-3">
                     {phase.phase}
                   </h3>
 
                   {/* Tasks */}
                   <ul className="flex flex-col gap-1.5">
                     {phase.tasks.map((task) => (
-                      <li key={task} className="text-xs" style={{ color: 'rgba(255,255,255,0.35)' }}>
+                      <li key={task} className="text-xs text-[#8A8A8A]">
                         {task}
                       </li>
                     ))}

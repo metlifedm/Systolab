@@ -32,7 +32,7 @@ const capabilities = [
     featured: true,
     size: 'large',
     color: '#1A4A7A',
-    gradient: 'linear-gradient(135deg, rgba(26,74,122,0.2) 0%, rgba(37,99,235,0.08) 100%)',
+    gradient: 'linear-gradient(135deg, rgba(26,74,122,0.06) 0%, rgba(37,99,235,0.03) 100%)',
     result: '8.7x Average ROAS',
   },
   {
@@ -53,7 +53,7 @@ const capabilities = [
     featured: false,
     size: 'medium',
     color: '#2C6E49',
-    gradient: 'linear-gradient(135deg, rgba(44,110,73,0.2) 0%, rgba(44,110,73,0.05) 100%)',
+    gradient: 'linear-gradient(135deg, rgba(44,110,73,0.06) 0%, rgba(44,110,73,0.02) 100%)',
     result: '+340% Organic Traffic',
   },
   {
@@ -74,7 +74,7 @@ const capabilities = [
     featured: false,
     size: 'medium',
     color: '#1A4A7A',
-    gradient: 'linear-gradient(135deg, rgba(26,74,122,0.15) 0%, rgba(26,74,122,0.03) 100%)',
+    gradient: 'linear-gradient(135deg, rgba(26,74,122,0.06) 0%, rgba(26,74,122,0.02) 100%)',
     result: '3.2x Brand Recall',
   },
   {
@@ -95,7 +95,7 @@ const capabilities = [
     featured: false,
     size: 'medium',
     color: '#2C6E49',
-    gradient: 'linear-gradient(135deg, rgba(44,110,73,0.15) 0%, rgba(44,110,73,0.03) 100%)',
+    gradient: 'linear-gradient(135deg, rgba(44,110,73,0.06) 0%, rgba(44,110,73,0.02) 100%)',
     result: '12M+ Monthly Impressions',
   },
   {
@@ -116,7 +116,7 @@ const capabilities = [
     featured: false,
     size: 'medium',
     color: '#1A4A7A',
-    gradient: 'linear-gradient(135deg, rgba(26,74,122,0.15) 0%, rgba(26,74,122,0.03) 100%)',
+    gradient: 'linear-gradient(135deg, rgba(26,74,122,0.06) 0%, rgba(26,74,122,0.02) 100%)',
     result: '+580% Engagement Rate',
   },
   {
@@ -137,7 +137,7 @@ const capabilities = [
     featured: true,
     size: 'large',
     color: '#2C6E49',
-    gradient: 'linear-gradient(135deg, rgba(44,110,73,0.2) 0%, rgba(44,110,73,0.06) 100%)',
+    gradient: 'linear-gradient(135deg, rgba(44,110,73,0.06) 0%, rgba(44,110,73,0.03) 100%)',
     result: '98% Data Accuracy',
   },
 ]
@@ -154,8 +154,9 @@ function CapabilityCard({ cap, index }) {
         cap.size === 'large' ? 'md:col-span-2 lg:col-span-2' : ''
       }`}
       style={{
-        background: hovered ? cap.gradient : 'rgba(255,255,255,0.02)',
-        border: `1px solid ${hovered ? cap.color + '35' : 'rgba(255,255,255,0.06)'}`,
+        background: hovered ? cap.gradient : '#FFFFFF',
+        border: `1px solid ${hovered ? cap.color + '30' : '#E5E5E5'}`,
+        boxShadow: hovered ? '0 8px 24px rgba(0,0,0,0.06)' : '0 1px 3px rgba(0,0,0,0.04)',
         transition: 'all 0.4s cubic-bezier(0.22, 1, 0.36, 1)',
       }}
       initial={{ opacity: 0, y: 40 }}
@@ -173,7 +174,7 @@ function CapabilityCard({ cap, index }) {
       <motion.div
         className="absolute -top-16 -right-16 w-48 h-48 rounded-full"
         style={{
-          background: `radial-gradient(circle, ${cap.color}12 0%, transparent 70%)`,
+          background: `radial-gradient(circle, ${cap.color}06 0%, transparent 70%)`,
         }}
         animate={hovered ? { scale: 1.5, opacity: 1 } : { scale: 1, opacity: 0.5 }}
         transition={{ duration: 0.4 }}
@@ -185,8 +186,8 @@ function CapabilityCard({ cap, index }) {
           <div
             className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
             style={{
-              background: `${cap.color}20`,
-              border: `1px solid ${cap.color}30`,
+              background: `${cap.color}10`,
+              border: `1px solid ${cap.color}20`,
             }}
           >
             <Icon size={26} style={{ color: cap.color }} />
@@ -194,24 +195,24 @@ function CapabilityCard({ cap, index }) {
           <div
             className="px-3 py-1.5 rounded-full"
             style={{
-              background: `${cap.color}12`,
-              border: `1px solid ${cap.color}20`,
+              background: `${cap.color}08`,
+              border: `1px solid ${cap.color}15`,
             }}
           >
-            <span className="font-mono text-xs" style={{ color: cap.color }}>
+            <span className="font-mono text-xs font-medium" style={{ color: cap.color }}>
               {cap.result}
             </span>
           </div>
         </div>
 
         {/* Title & Tagline */}
-        <p className="font-mono text-xs tracking-widest uppercase mb-1" style={{ color: cap.color }}>
+        <p className="font-mono text-xs tracking-widest uppercase mb-1 font-medium" style={{ color: cap.color }}>
           {cap.tagline}
         </p>
-        <h3 className="text-2xl font-display font-bold text-white mb-3">
+        <h3 className="text-2xl font-display font-bold text-[#1A1A1A] mb-3">
           {cap.title}
         </h3>
-        <p className="text-sm leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.45)' }}>
+        <p className="text-sm leading-relaxed mb-6 text-[#5A5A5A]">
           {cap.description}
         </p>
 
@@ -220,7 +221,7 @@ function CapabilityCard({ cap, index }) {
           {cap.highlights.map((h) => (
             <div key={h} className="flex items-center gap-2">
               <CheckCircle2 size={13} style={{ color: cap.color, flexShrink: 0 }} />
-              <span className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>{h}</span>
+              <span className="text-xs text-[#8A8A8A]">{h}</span>
             </div>
           ))}
         </div>
@@ -232,9 +233,9 @@ function CapabilityCard({ cap, index }) {
               key={kpi}
               className="px-3 py-1 rounded-full text-xs font-mono"
               style={{
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.06)',
-                color: 'rgba(255,255,255,0.35)',
+                background: '#F8F9FA',
+                border: '1px solid #E5E5E5',
+                color: '#8A8A8A',
               }}
             >
               {kpi}
@@ -260,7 +261,7 @@ export default function CapabilitiesGrid() {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
-    <section className="section-padding" style={{ background: '#0A0A0F' }}>
+    <section className="section-padding" style={{ background: '#F8F9FA' }}>
       <div className="container-custom">
         {/* Header */}
         <motion.div
@@ -273,20 +274,20 @@ export default function CapabilitiesGrid() {
           <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
             style={{
-              background: 'rgba(26,74,122,0.12)',
-              border: '1px solid rgba(26,74,122,0.25)',
+              background: 'rgba(26,74,122,0.08)',
+              border: '1px solid rgba(26,74,122,0.15)',
             }}
           >
-            <span className="font-mono text-xs tracking-widest uppercase"
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold"
               style={{ color: '#1A4A7A' }}>
               All Capabilities
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-display font-black mb-6">
+          <h2 className="text-4xl lg:text-5xl font-display font-black mb-6 text-[#1A1A1A]">
             The complete
             <span className="text-gradient"> growth arsenal</span>
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <p className="text-lg max-w-2xl mx-auto text-[#5A5A5A]">
             Every service is designed to generate measurable returns.
             Deploy one, deploy all — each amplifies the others.
           </p>

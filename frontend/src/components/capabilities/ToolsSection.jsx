@@ -30,7 +30,7 @@ export default function ToolsSection() {
     <section
       className="section-padding overflow-hidden"
       style={{
-        background: 'linear-gradient(180deg, #0A0A0F, #0C0C12)',
+        background: '#FFFFFF',
       }}
     >
       <div className="container-custom mb-16">
@@ -44,20 +44,20 @@ export default function ToolsSection() {
           <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
             style={{
-              background: 'rgba(26,74,122,0.12)',
-              border: '1px solid rgba(26,74,122,0.25)',
+              background: 'rgba(26,74,122,0.08)',
+              border: '1px solid rgba(26,74,122,0.15)',
             }}
           >
-            <span className="font-mono text-xs tracking-widest uppercase"
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold"
               style={{ color: '#1A4A7A' }}>
               Our Tech Stack
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4">
+          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4 text-[#1A1A1A]">
             Powered by
             <span className="text-gradient"> elite tooling</span>
           </h2>
-          <p className="text-lg max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <p className="text-lg max-w-xl mx-auto text-[#5A5A5A]">
             30+ premium platforms integrated into a unified intelligence layer.
           </p>
         </motion.div>
@@ -75,8 +75,7 @@ export default function ToolsSection() {
           >
             {/* Row label */}
             <div className="container-custom mb-3">
-              <span className="font-mono text-xs tracking-widest uppercase"
-                style={{ color: 'rgba(255,255,255,0.2)' }}>
+              <span className="font-mono text-xs tracking-widest uppercase text-[#B0B0B0]">
                 — {row.label}
               </span>
             </div>
@@ -94,15 +93,16 @@ export default function ToolsSection() {
                     key={i}
                     className="flex-shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-xl"
                     style={{
-                      background: 'rgba(255,255,255,0.02)',
-                      border: '1px solid rgba(255,255,255,0.05)',
+                      background: '#F8F9FA',
+                      border: '1px solid #E5E5E5',
+                      boxShadow: '0 1px 2px rgba(0,0,0,0.02)',
                     }}
                   >
                     <div
                       className="w-2 h-2 rounded-full flex-shrink-0"
                       style={{ background: row.color }}
                     />
-                    <span className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                    <span className="text-sm font-medium text-[#5A5A5A]">
                       {tool}
                     </span>
                   </div>
@@ -113,11 +113,11 @@ export default function ToolsSection() {
             {/* Fade edges */}
             <div
               className="absolute inset-y-0 left-0 w-24 pointer-events-none z-10"
-              style={{ background: 'linear-gradient(to right, #0A0A0F, transparent)' }}
+              style={{ background: 'linear-gradient(to right, #FFFFFF, transparent)' }}
             />
             <div
               className="absolute inset-y-0 right-0 w-24 pointer-events-none z-10"
-              style={{ background: 'linear-gradient(to left, #0A0A0F, transparent)' }}
+              style={{ background: 'linear-gradient(to left, #FFFFFF, transparent)' }}
             />
           </motion.div>
         ))}
@@ -141,12 +141,12 @@ export default function ToolsSection() {
               key={label}
               className="text-center p-6 rounded-2xl"
               style={{
-                background: 'rgba(255,255,255,0.02)',
-                border: '1px solid rgba(255,255,255,0.05)',
+                background: '#F8F9FA',
+                border: '1px solid #E5E5E5',
               }}
             >
-              <div className="text-3xl font-display font-black text-white mb-1">{n}</div>
-              <div className="text-xs font-mono" style={{ color: 'rgba(255,255,255,0.3)' }}>{label}</div>
+              <div className="text-3xl font-display font-black text-[#1A1A1A] mb-1">{n}</div>
+              <div className="text-xs font-mono text-[#8A8A8A]">{label}</div>
             </div>
           ))}
         </div>

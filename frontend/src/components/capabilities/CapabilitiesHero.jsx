@@ -21,7 +21,7 @@ export default function CapabilitiesHero() {
   return (
     <section
       className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-24"
-      style={{ background: '#0A0A0F' }}
+      style={{ background: '#FFFFFF' }}
     >
       <AnimatedBackground variant="hero" particleCount={40} />
 
@@ -38,8 +38,8 @@ export default function CapabilitiesHero() {
               key={i}
               className="absolute w-12 h-12 rounded-2xl flex items-center justify-center"
               style={{
-                background: 'rgba(26,74,122,0.12)',
-                border: '1px solid rgba(26,74,122,0.2)',
+                background: 'rgba(26,74,122,0.06)',
+                border: '1px solid rgba(26,74,122,0.12)',
                 x,
                 y,
               }}
@@ -60,7 +60,7 @@ export default function CapabilitiesHero() {
                 ease: 'linear',
               }}
             >
-              <Icon size={18} style={{ color: 'rgba(26,74,122,0.8)' }} />
+              <Icon size={18} style={{ color: 'rgba(26,74,122,0.6)' }} />
             </motion.div>
           )
         })}
@@ -77,12 +77,12 @@ export default function CapabilitiesHero() {
           <div
             className="flex items-center gap-2 px-5 py-2.5 rounded-full"
             style={{
-              background: 'rgba(26,74,122,0.12)',
-              border: '1px solid rgba(26,74,122,0.25)',
+              background: 'rgba(26,74,122,0.08)',
+              border: '1px solid rgba(26,74,122,0.15)',
             }}
           >
             <Zap size={13} style={{ color: '#1A4A7A' }} />
-            <span className="font-mono text-xs tracking-widest uppercase"
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold"
               style={{ color: '#1A4A7A' }}>
               Full-Stack Capabilities
             </span>
@@ -96,15 +96,14 @@ export default function CapabilitiesHero() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="block text-white">Six disciplines.</span>
-          <span className="block text-white">One unified</span>
+          <span className="block text-[#1A1A1A]">Six disciplines.</span>
+          <span className="block text-[#1A1A1A]">One unified</span>
           <span className="block text-gradient">growth engine.</span>
         </motion.h1>
 
         {/* Subtitle */}
         <motion.p
-          className="text-xl max-w-3xl mx-auto mb-12 leading-relaxed"
-          style={{ color: 'rgba(255,255,255,0.5)' }}
+          className="text-xl max-w-3xl mx-auto mb-12 leading-relaxed text-[#5A5A5A]"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.25 }}
@@ -125,7 +124,7 @@ export default function CapabilitiesHero() {
             className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold text-white"
             style={{
               background: 'linear-gradient(135deg, #1A4A7A, #2563EB)',
-              boxShadow: '0 20px 40px rgba(26,74,122,0.3)',
+              boxShadow: '0 8px 20px rgba(26,74,122,0.2)',
             }}
           >
             <span>Build My Capability Stack</span>
@@ -133,11 +132,19 @@ export default function CapabilitiesHero() {
           </Link>
           <Link
             to="/verified-outcomes"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-medium"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-medium transition-all duration-200"
             style={{
-              color: 'rgba(255,255,255,0.6)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              background: 'rgba(255,255,255,0.02)',
+              color: '#1A4A7A',
+              border: '1px solid rgba(26,74,122,0.25)',
+              background: 'transparent',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'rgba(26,74,122,0.04)'
+              e.currentTarget.style.borderColor = 'rgba(26,74,122,0.4)'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'transparent'
+              e.currentTarget.style.borderColor = 'rgba(26,74,122,0.25)'
             }}
           >
             <span>View Results</span>
@@ -153,11 +160,11 @@ export default function CapabilitiesHero() {
         >
           <motion.div
             className="w-6 h-10 rounded-full flex items-start justify-center pt-2 mx-auto"
-            style={{ border: '1px solid rgba(255,255,255,0.1)' }}
+            style={{ border: '1px solid rgba(26,74,122,0.2)' }}
           >
             <motion.div
               className="w-1 h-2.5 rounded-full"
-              style={{ background: 'rgba(26,74,122,0.8)' }}
+              style={{ background: 'rgba(26,74,122,0.6)' }}
               animate={{ y: [0, 12, 0], opacity: [1, 0, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />

@@ -53,14 +53,13 @@ const caseStudies = [
 ]
 
 function CaseStudyCard({ study, isActive, onClick }) {
-  const Icon = Target
-
   return (
     <button
       className="w-full text-left p-5 rounded-2xl transition-all duration-300"
       style={{
-        background: isActive ? `${study.color}12` : 'rgba(255,255,255,0.02)',
-        border: `1px solid ${isActive ? study.color + '30' : 'rgba(255,255,255,0.06)'}`,
+        background: isActive ? `${study.color}08` : '#FFFFFF',
+        border: `1px solid ${isActive ? study.color + '25' : '#E5E5E5'}`,
+        boxShadow: isActive ? `0 2px 8px ${study.color}08` : '0 1px 2px rgba(0,0,0,0.02)',
       }}
       onClick={onClick}
     >
@@ -72,8 +71,8 @@ function CaseStudyCard({ study, isActive, onClick }) {
           {study.client[0]}
         </div>
         <div className="text-left">
-          <div className="font-display font-bold text-sm text-white">{study.client}</div>
-          <div className="text-xs" style={{ color: 'rgba(255,255,255,0.35)' }}>
+          <div className="font-display font-bold text-sm text-[#1A1A1A]">{study.client}</div>
+          <div className="text-xs text-[#8A8A8A]">
             {study.industry} · {study.service}
           </div>
         </div>
@@ -91,7 +90,7 @@ export default function CapabilityDeepDive() {
     <section
       className="section-padding"
       style={{
-        background: 'linear-gradient(180deg, #0A0A0F 0%, #0D0D15 50%, #0A0A0F 100%)',
+        background: '#FFFFFF',
       }}
     >
       <div className="container-custom">
@@ -106,20 +105,20 @@ export default function CapabilityDeepDive() {
           <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
             style={{
-              background: 'rgba(26,74,122,0.12)',
-              border: '1px solid rgba(26,74,122,0.25)',
+              background: 'rgba(26,74,122,0.08)',
+              border: '1px solid rgba(26,74,122,0.15)',
             }}
           >
-            <span className="font-mono text-xs tracking-widest uppercase"
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold"
               style={{ color: '#1A4A7A' }}>
               Capability in Action
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4">
+          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4 text-[#1A1A1A]">
             Real results from
             <span className="text-gradient"> real campaigns</span>
           </h2>
-          <p className="text-lg max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <p className="text-lg max-w-xl mx-auto text-[#5A5A5A]">
             Not projections. Not promises. Verified outcomes from active client engagements.
           </p>
         </motion.div>
@@ -148,8 +147,9 @@ export default function CapabilityDeepDive() {
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="rounded-3xl overflow-hidden h-full"
                 style={{
-                  background: `linear-gradient(135deg, ${study.color}10, rgba(255,255,255,0.01))`,
-                  border: `1px solid ${study.color}25`,
+                  background: `linear-gradient(135deg, ${study.color}04, #FFFFFF)`,
+                  border: `1px solid ${study.color}15`,
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
                 }}
               >
                 <div className="p-8 lg:p-10">
@@ -162,19 +162,20 @@ export default function CapabilityDeepDive() {
                       {study.client[0]}
                     </div>
                     <div>
-                      <h3 className="text-2xl font-display font-bold text-white">{study.client}</h3>
+                      <h3 className="text-2xl font-display font-bold text-[#1A1A1A]">{study.client}</h3>
                       <div className="flex items-center gap-2 mt-1">
                         <span
-                          className="px-3 py-1 rounded-full text-xs font-mono"
-                          style={{ background: `${study.color}15`, color: study.color }}
+                          className="px-3 py-1 rounded-full text-xs font-mono font-medium"
+                          style={{ background: `${study.color}10`, color: study.color }}
                         >
                           {study.industry}
                         </span>
                         <span
                           className="px-3 py-1 rounded-full text-xs font-mono"
                           style={{
-                            background: 'rgba(255,255,255,0.04)',
-                            color: 'rgba(255,255,255,0.35)',
+                            background: '#F8F9FA',
+                            border: '1px solid #E5E5E5',
+                            color: '#8A8A8A',
                           }}
                         >
                           {study.service}
@@ -187,23 +188,21 @@ export default function CapabilityDeepDive() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                     <div>
                       <span
-                        className="font-mono text-xs tracking-widest uppercase mb-3 block"
-                        style={{ color: 'rgba(255,255,255,0.25)' }}
+                        className="font-mono text-xs tracking-widest uppercase mb-3 block text-[#8A8A8A]"
                       >
                         Challenge
                       </span>
-                      <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
+                      <p className="text-sm leading-relaxed text-[#5A5A5A]">
                         {study.challenge}
                       </p>
                     </div>
                     <div>
                       <span
-                        className="font-mono text-xs tracking-widest uppercase mb-3 block"
-                        style={{ color: 'rgba(255,255,255,0.25)' }}
+                        className="font-mono text-xs tracking-widest uppercase mb-3 block text-[#8A8A8A]"
                       >
                         Our Solution
                       </span>
-                      <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
+                      <p className="text-sm leading-relaxed text-[#5A5A5A]">
                         {study.solution}
                       </p>
                     </div>
@@ -213,17 +212,17 @@ export default function CapabilityDeepDive() {
                   <div
                     className="p-5 rounded-2xl mb-8"
                     style={{
-                      background: `${study.color}10`,
-                      border: `1px solid ${study.color}20`,
+                      background: `${study.color}06`,
+                      border: `1px solid ${study.color}12`,
                     }}
                   >
                     <span
-                      className="font-mono text-xs tracking-widest uppercase mb-2 block"
+                      className="font-mono text-xs tracking-widest uppercase mb-2 block font-medium"
                       style={{ color: study.color }}
                     >
                       Outcome
                     </span>
-                    <p className="text-base font-display font-semibold text-white leading-relaxed">
+                    <p className="text-base font-display font-semibold text-[#1A1A1A] leading-relaxed">
                       {study.result}
                     </p>
                   </div>
@@ -235,8 +234,8 @@ export default function CapabilityDeepDive() {
                         key={label}
                         className="text-center p-4 rounded-2xl"
                         style={{
-                          background: 'rgba(255,255,255,0.02)',
-                          border: '1px solid rgba(255,255,255,0.04)',
+                          background: '#F8F9FA',
+                          border: '1px solid #E5E5E5',
                         }}
                       >
                         <div
@@ -245,7 +244,7 @@ export default function CapabilityDeepDive() {
                         >
                           {value}
                         </div>
-                        <div className="text-xs" style={{ color: 'rgba(255,255,255,0.3)' }}>
+                        <div className="text-xs text-[#8A8A8A]">
                           {label}
                         </div>
                       </div>
