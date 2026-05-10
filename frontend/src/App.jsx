@@ -9,6 +9,7 @@ import ScrollProgress from '@/components/ui/ScrollProgress'
 import PageTransition from '@/components/ui/PageTransition'
 import Capabilities from './pages/Capabilities'
 import VerifiedOutcomes from './pages/VerifiedOutcomes'
+import Operators from './pages/Operators'
 
 // Lazy load pages
 const Interface = lazy(() => import('@/pages/Interface'))
@@ -73,6 +74,14 @@ function AnimatedRoutes() {
           <PageTransition>
             <Suspense fallback={<div className="min-h-screen bg-[#0A0A0F]" />}>
               <VerifiedOutcomes />
+            </Suspense>
+          </PageTransition>
+        } />
+
+        <Route path="/operators" element={
+          <PageTransition>
+            <Suspense fallback={<div className="min-h-screen bg-[#0A0A0F]" />}>
+              <Operators />
             </Suspense>
           </PageTransition>
         } />
