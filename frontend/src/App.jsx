@@ -11,6 +11,7 @@ import Capabilities from './pages/Capabilities'
 import VerifiedOutcomes from './pages/VerifiedOutcomes'
 import Operators from './pages/Operators'
 import Initiate from './pages/Initiate'
+import Infrastructure from './pages/Infrastructure'
 
 // Lazy load pages
 const Interface = lazy(() => import('@/pages/Interface'))
@@ -95,7 +96,13 @@ function AnimatedRoutes() {
           </PageTransition>
         } />
 
-
+        <Route path="/infrastructure" element={
+          <PageTransition>
+            <Suspense fallback={<div className="min-h-screen bg-[#0A0A0F]" />}>
+              <Infrastructure />
+            </Suspense>
+          </PageTransition>
+        } />
       </Routes>
     </AnimatePresence>
   )
