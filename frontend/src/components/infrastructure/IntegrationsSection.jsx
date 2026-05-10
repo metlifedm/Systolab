@@ -16,7 +16,7 @@ export default function IntegrationsSection() {
   return (
     <section
       className="section-padding"
-      style={{ background: 'linear-gradient(180deg,#0A0A0F,#0D0D15,#0A0A0F)' }}
+      style={{ background: '#F8F9FA' }}
     >
       <div className="container-custom">
         <motion.div
@@ -28,17 +28,17 @@ export default function IntegrationsSection() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-            style={{ background: 'rgba(26,74,122,0.12)', border: '1px solid rgba(26,74,122,0.25)' }}
+            style={{ background: 'rgba(26,74,122,0.08)', border: '1px solid rgba(26,74,122,0.15)' }}
           >
-            <span className="font-mono text-xs tracking-widest uppercase" style={{ color: '#1A4A7A' }}>
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold" style={{ color: '#1A4A7A' }}>
               50+ Integrations
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4">
+          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4 text-[#1A1A1A]">
             Connects with your
             <span className="text-gradient"> entire stack</span>
           </h2>
-          <p className="text-lg max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <p className="text-lg max-w-xl mx-auto text-[#5A5A5A]">
             Native integrations with every major platform, plus custom API connectors for anything unique to your stack.
           </p>
         </motion.div>
@@ -48,15 +48,15 @@ export default function IntegrationsSection() {
             <motion.div
               key={cat.category}
               className="p-6 rounded-3xl"
-              style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}
+              style={{ background: '#FFFFFF', border: '1px solid #E5E5E5', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              whileHover={{ y: -4, borderColor: `${cat.color}25` }}
+              whileHover={{ y: -4, borderColor: `${cat.color}30`, boxShadow: '0 8px 24px rgba(0,0,0,0.06)' }}
             >
               <div className="flex items-center gap-2 mb-5">
                 <div className="w-2 h-2 rounded-full" style={{ background: cat.color }} />
-                <span className="font-mono text-xs tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.35)' }}>
+                <span className="font-mono text-xs tracking-widest uppercase font-medium" style={{ color: '#8A8A8A' }}>
                   {cat.category}
                 </span>
               </div>
@@ -66,9 +66,9 @@ export default function IntegrationsSection() {
                     key={t}
                     className="px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200"
                     style={{
-                      background: 'rgba(255,255,255,0.03)',
-                      border: '1px solid rgba(255,255,255,0.05)',
-                      color: 'rgba(255,255,255,0.5)',
+                      background: '#F8F9FA',
+                      border: '1px solid #E5E5E5',
+                      color: '#5A5A5A',
                     }}
                   >
                     {t}
@@ -86,9 +86,9 @@ export default function IntegrationsSection() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.6 }}
         >
-          <p className="text-sm" style={{ color: 'rgba(255,255,255,0.25)' }}>
+          <p className="text-sm text-[#8A8A8A]">
             Don't see your platform? We build custom connectors for any tool in your stack.{' '}
-            <a href="#" className="underline" style={{ color: 'rgba(26,74,122,0.8)' }}>Ask us about it →</a>
+            <a href="#" className="underline font-medium" style={{ color: '#1A4A7A' }}>Ask us about it →</a>
           </p>
         </motion.div>
       </div>

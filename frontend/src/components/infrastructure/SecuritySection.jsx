@@ -15,7 +15,7 @@ export default function SecuritySection() {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
-    <section className="section-padding" style={{ background: '#0A0A0F' }}>
+    <section className="section-padding" style={{ background: '#F8F9FA' }}>
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -26,18 +26,18 @@ export default function SecuritySection() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-            style={{ background: 'rgba(44,110,73,0.12)', border: '1px solid rgba(44,110,73,0.25)' }}
+            style={{ background: 'rgba(44,110,73,0.08)', border: '1px solid rgba(44,110,73,0.15)' }}
           >
             <Shield size={13} style={{ color: '#2C6E49' }} />
-            <span className="font-mono text-xs tracking-widest uppercase" style={{ color: '#2C6E49' }}>
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold" style={{ color: '#2C6E49' }}>
               Security & Compliance
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4">
+          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4 text-[#1A1A1A]">
             Enterprise-grade
             <span className="text-gradient"> security by default</span>
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <p className="text-lg max-w-2xl mx-auto text-[#5A5A5A]">
             Your data, strategies, and intellectual property are protected by the
             highest security standards in the industry — with zero compromises.
           </p>
@@ -50,20 +50,20 @@ export default function SecuritySection() {
               <motion.div
                 key={c.title}
                 className="p-7 rounded-3xl group"
-                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}
+                style={{ background: '#FFFFFF', border: '1px solid #E5E5E5', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                whileHover={{ y: -4, borderColor: `${c.color}25`, background: `${c.color}04` }}
+                whileHover={{ y: -4, borderColor: `${c.color}30`, background: `${c.color}02`, boxShadow: '0 8px 24px rgba(0,0,0,0.06)' }}
               >
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                  style={{ background: `${c.color}15`, border: `1px solid ${c.color}25` }}
+                  style={{ background: `${c.color}10`, border: `1px solid ${c.color}20` }}
                 >
                   <Icon size={22} style={{ color: c.color }} />
                 </div>
-                <h3 className="font-display font-bold text-lg text-white mb-2">{c.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>{c.desc}</p>
+                <h3 className="font-display font-bold text-lg text-[#1A1A1A] mb-2">{c.title}</h3>
+                <p className="text-sm leading-relaxed text-[#5A5A5A]">{c.desc}</p>
               </motion.div>
             )
           })}

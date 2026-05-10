@@ -10,7 +10,7 @@ export default function InfrastructureHero() {
   return (
     <section
       className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-24"
-      style={{ background: '#0A0A0F' }}
+      style={{ background: '#FFFFFF' }}
     >
       <AnimatedBackground variant="accent" particleCount={30} />
 
@@ -24,7 +24,7 @@ export default function InfrastructureHero() {
               left: `${(i + 1) * 11.5}%`,
               top: 0,
               bottom: 0,
-              background: 'linear-gradient(180deg, transparent, rgba(26,74,122,0.08), transparent)',
+              background: 'linear-gradient(180deg, transparent, rgba(26,74,122,0.06), transparent)',
             }}
             animate={{ opacity: [0.3, 0.8, 0.3] }}
             transition={{ duration: 3 + i * 0.4, repeat: Infinity, delay: i * 0.2 }}
@@ -41,10 +41,10 @@ export default function InfrastructureHero() {
         >
           <div
             className="flex items-center gap-2 px-5 py-2.5 rounded-full"
-            style={{ background: 'rgba(26,74,122,0.12)', border: '1px solid rgba(26,74,122,0.25)' }}
+            style={{ background: 'rgba(26,74,122,0.08)', border: '1px solid rgba(26,74,122,0.15)' }}
           >
             <Server size={13} style={{ color: '#1A4A7A' }} />
-            <span className="font-mono text-xs tracking-widest uppercase" style={{ color: '#1A4A7A' }}>
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold" style={{ color: '#1A4A7A' }}>
               Growth Infrastructure
             </span>
           </div>
@@ -56,14 +56,13 @@ export default function InfrastructureHero() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="block text-white">Pricing, tech,</span>
-          <span className="block text-white">and the systems</span>
+          <span className="block text-[#1A1A1A]">Pricing, tech,</span>
+          <span className="block text-[#1A1A1A]">and the systems</span>
           <span className="block text-gradient">powering your growth.</span>
         </motion.h1>
 
         <motion.p
-          className="text-xl max-w-3xl mx-auto mb-12 leading-relaxed"
-          style={{ color: 'rgba(255,255,255,0.5)' }}
+          className="text-xl max-w-3xl mx-auto mb-12 leading-relaxed text-[#5A5A5A]"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.25 }}
@@ -86,10 +85,10 @@ export default function InfrastructureHero() {
             <div
               key={text}
               className="flex items-center gap-2 px-5 py-2.5 rounded-full"
-              style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
+              style={{ background: '#F8F9FA', border: '1px solid #E5E5E5' }}
             >
               <Icon size={14} style={{ color: '#1A4A7A' }} />
-              <span className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>{text}</span>
+              <span className="text-sm text-[#5A5A5A]">{text}</span>
             </div>
           ))}
         </motion.div>
@@ -103,7 +102,7 @@ export default function InfrastructureHero() {
           <Link
             to="/initiate"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold text-white"
-            style={{ background: 'linear-gradient(135deg,#1A4A7A,#2563EB)', boxShadow: '0 20px 40px rgba(26,74,122,0.3)' }}
+            style={{ background: 'linear-gradient(135deg,#1A4A7A,#2563EB)', boxShadow: '0 8px 20px rgba(26,74,122,0.2)' }}
           >
             <span>Get Custom Pricing</span>
             <ArrowRight size={18} />

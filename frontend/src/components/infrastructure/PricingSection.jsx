@@ -72,7 +72,7 @@ export default function PricingSection() {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
-    <section className="section-padding" style={{ background: '#0A0A0F' }}>
+    <section className="section-padding" style={{ background: '#FFFFFF' }}>
       <div className="container-custom">
         <motion.div
           ref={ref}
@@ -83,27 +83,27 @@ export default function PricingSection() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-            style={{ background: 'rgba(26,74,122,0.12)', border: '1px solid rgba(26,74,122,0.25)' }}
+            style={{ background: 'rgba(26,74,122,0.08)', border: '1px solid rgba(26,74,122,0.15)' }}
           >
-            <span className="font-mono text-xs tracking-widest uppercase" style={{ color: '#1A4A7A' }}>
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold" style={{ color: '#1A4A7A' }}>
               Transparent Pricing
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4">
+          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4 text-[#1A1A1A]">
             Simple, honest
             <span className="text-gradient"> pricing</span>
           </h2>
-          <p className="text-lg max-w-xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <p className="text-lg max-w-xl mx-auto mb-10 text-[#5A5A5A]">
             No hidden fees. No confusing tiers. Just the right plan for your stage and goals.
           </p>
 
           {/* Toggle */}
           <div className="flex items-center justify-center gap-4">
-            <span className="text-sm" style={{ color: annual ? 'rgba(255,255,255,0.35)' : 'white' }}>Monthly</span>
+            <span className="text-sm" style={{ color: annual ? '#8A8A8A' : '#1A1A1A' }}>Monthly</span>
             <button
               onClick={() => setAnnual(!annual)}
               className="relative w-14 h-7 rounded-full transition-all duration-300"
-              style={{ background: annual ? 'linear-gradient(135deg,#1A4A7A,#2563EB)' : 'rgba(255,255,255,0.1)' }}
+              style={{ background: annual ? 'linear-gradient(135deg,#1A4A7A,#2563EB)' : '#E5E5E5' }}
             >
               <motion.div
                 className="absolute top-1 w-5 h-5 rounded-full bg-white"
@@ -111,9 +111,9 @@ export default function PricingSection() {
                 transition={{ type: 'spring', stiffness: 500, damping: 30 }}
               />
             </button>
-            <span className="text-sm" style={{ color: annual ? 'white' : 'rgba(255,255,255,0.35)' }}>
+            <span className="text-sm" style={{ color: annual ? '#1A1A1A' : '#8A8A8A' }}>
               Annual
-              <span className="ml-2 px-2 py-0.5 rounded-full text-xs font-mono" style={{ background: 'rgba(44,110,73,0.15)', color: '#2C6E49' }}>
+              <span className="ml-2 px-2 py-0.5 rounded-full text-xs font-mono font-medium" style={{ background: 'rgba(44,110,73,0.1)', color: '#2C6E49' }}>
                 Save 16%
               </span>
             </span>
@@ -127,10 +127,10 @@ export default function PricingSection() {
               className={`relative rounded-3xl overflow-hidden flex flex-col ${plan.highlight ? 'md:-mt-4 md:-mb-4' : ''}`}
               style={{
                 background: plan.highlight
-                  ? 'linear-gradient(135deg, rgba(26,74,122,0.2), rgba(37,99,235,0.1))'
-                  : 'rgba(255,255,255,0.02)',
-                border: `1px solid ${plan.highlight ? 'rgba(26,74,122,0.4)' : 'rgba(255,255,255,0.06)'}`,
-                boxShadow: plan.highlight ? '0 40px 80px rgba(26,74,122,0.2)' : 'none',
+                  ? 'linear-gradient(135deg, rgba(26,74,122,0.04), rgba(37,99,235,0.02))'
+                  : '#FFFFFF',
+                border: `1px solid ${plan.highlight ? 'rgba(26,74,122,0.3)' : '#E5E5E5'}`,
+                boxShadow: plan.highlight ? '0 20px 40px rgba(26,74,122,0.1)' : '0 1px 3px rgba(0,0,0,0.04)',
               }}
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -151,25 +151,25 @@ export default function PricingSection() {
                 <div className="mb-6">
                   <div
                     className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full mb-4"
-                    style={{ background: `${plan.color}15`, border: `1px solid ${plan.color}25` }}
+                    style={{ background: `${plan.color}10`, border: `1px solid ${plan.color}20` }}
                   >
                     <Zap size={12} style={{ color: plan.color }} />
-                    <span className="font-mono text-xs" style={{ color: plan.color }}>{plan.name}</span>
+                    <span className="font-mono text-xs font-medium" style={{ color: plan.color }}>{plan.name}</span>
                   </div>
 
                   <div className="mb-3">
                     {plan.price.monthly ? (
                       <div className="flex items-baseline gap-1">
-                        <span className="text-5xl font-display font-black text-white">
+                        <span className="text-5xl font-display font-black text-[#1A1A1A]">
                           ${annual ? plan.price.annual.toLocaleString() : plan.price.monthly.toLocaleString()}
                         </span>
-                        <span className="text-sm" style={{ color: 'rgba(255,255,255,0.4)' }}>/mo</span>
+                        <span className="text-sm text-[#8A8A8A]">/mo</span>
                       </div>
                     ) : (
-                      <div className="text-3xl font-display font-black text-white">Custom</div>
+                      <div className="text-3xl font-display font-black text-[#1A1A1A]">Custom</div>
                     )}
                   </div>
-                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                  <p className="text-sm leading-relaxed text-[#5A5A5A]">
                     {plan.description}
                   </p>
                 </div>
@@ -180,11 +180,11 @@ export default function PricingSection() {
                     <li key={f} className="flex items-start gap-3">
                       <div
                         className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                        style={{ background: `${plan.color}20` }}
+                        style={{ background: `${plan.color}15` }}
                       >
                         <Check size={11} style={{ color: plan.color }} />
                       </div>
-                      <span className="text-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>{f}</span>
+                      <span className="text-sm text-[#5A5A5A]">{f}</span>
                     </li>
                   ))}
                 </ul>
@@ -198,22 +198,20 @@ export default function PricingSection() {
                   style={{
                     background: plan.highlight
                       ? 'linear-gradient(135deg,#1A4A7A,#2563EB)'
-                      : 'rgba(255,255,255,0.04)',
-                    border: plan.highlight ? 'none' : '1px solid rgba(255,255,255,0.08)',
-                    color: plan.highlight ? 'white' : 'rgba(255,255,255,0.7)',
+                      : '#F8F9FA',
+                    border: plan.highlight ? 'none' : '1px solid #E5E5E5',
+                    color: plan.highlight ? 'white' : '#1A1A1A',
                   }}
                   onMouseEnter={(e) => {
                     if (!plan.highlight) {
-                      e.currentTarget.style.background = `${plan.color}15`
+                      e.currentTarget.style.background = `${plan.color}10`
                       e.currentTarget.style.borderColor = `${plan.color}30`
-                      e.currentTarget.style.color = 'white'
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (!plan.highlight) {
-                      e.currentTarget.style.background = 'rgba(255,255,255,0.04)'
-                      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'
-                      e.currentTarget.style.color = 'rgba(255,255,255,0.7)'
+                      e.currentTarget.style.background = '#F8F9FA'
+                      e.currentTarget.style.borderColor = '#E5E5E5'
                     }
                   }}
                 >

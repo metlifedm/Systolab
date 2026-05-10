@@ -53,7 +53,7 @@ export default function TechArchitecture() {
   return (
     <section
       className="section-padding"
-      style={{ background: 'linear-gradient(180deg,#0A0A0F,#0D0D15,#0A0A0F)' }}
+      style={{ background: '#FFFFFF' }}
     >
       <div className="container-custom">
         <motion.div
@@ -65,17 +65,17 @@ export default function TechArchitecture() {
         >
           <div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-            style={{ background: 'rgba(26,74,122,0.12)', border: '1px solid rgba(26,74,122,0.25)' }}
+            style={{ background: 'rgba(26,74,122,0.08)', border: '1px solid rgba(26,74,122,0.15)' }}
           >
-            <span className="font-mono text-xs tracking-widest uppercase" style={{ color: '#1A4A7A' }}>
+            <span className="font-mono text-xs tracking-widest uppercase font-semibold" style={{ color: '#1A4A7A' }}>
               Tech Architecture
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4">
+          <h2 className="text-4xl lg:text-5xl font-display font-black mb-4 text-[#1A1A1A]">
             Six layers of
             <span className="text-gradient"> growth infrastructure</span>
           </h2>
-          <p className="text-lg max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.45)' }}>
+          <p className="text-lg max-w-2xl mx-auto text-[#5A5A5A]">
             Our proprietary stack is what separates APEX from traditional agencies.
             Each layer is purpose-built to maximize performance and minimize waste.
           </p>
@@ -88,34 +88,34 @@ export default function TechArchitecture() {
               <motion.div
                 key={l.layer}
                 className="relative p-7 rounded-3xl group overflow-hidden"
-                style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}
+                style={{ background: '#FFFFFF', border: '1px solid #E5E5E5', boxShadow: '0 1px 3px rgba(0,0,0,0.04)' }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -5, borderColor: `${l.color}30`, background: `${l.color}05` }}
+                whileHover={{ y: -5, borderColor: `${l.color}30`, background: `${l.color}02`, boxShadow: '0 8px 24px rgba(0,0,0,0.06)' }}
               >
                 <motion.div
                   className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{ background: `radial-gradient(circle at 20% 20%, ${l.color}12 0%, transparent 60%)` }}
+                  style={{ background: `radial-gradient(circle at 20% 20%, ${l.color}06 0%, transparent 60%)` }}
                 />
                 <div className="flex items-center gap-3 mb-5">
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: `${l.color}15`, border: `1px solid ${l.color}25` }}
+                    style={{ background: `${l.color}10`, border: `1px solid ${l.color}20` }}
                   >
                     <Icon size={22} style={{ color: l.color }} />
                   </div>
-                  <h3 className="font-display font-bold text-white">{l.layer}</h3>
+                  <h3 className="font-display font-bold text-[#1A1A1A]">{l.layer}</h3>
                 </div>
-                <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                <p className="text-sm leading-relaxed mb-5 text-[#5A5A5A]">
                   {l.desc}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {l.components.map((c) => (
                     <span
                       key={c}
-                      className="px-3 py-1 rounded-full text-xs font-mono"
-                      style={{ background: `${l.color}10`, border: `1px solid ${l.color}20`, color: l.color }}
+                      className="px-3 py-1 rounded-full text-xs font-mono font-medium"
+                      style={{ background: `${l.color}08`, border: `1px solid ${l.color}15`, color: l.color }}
                     >
                       {c}
                     </span>
