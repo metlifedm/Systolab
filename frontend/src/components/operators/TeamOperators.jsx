@@ -1,7 +1,7 @@
 import {
-  Linkedin,
   Mail,
 } from 'lucide-react'
+import { FaLinkedin } from "react-icons/fa";
 
 export default function TeamOperators() {
   return (
@@ -162,7 +162,7 @@ export default function TeamOperators() {
                     hover:bg-blue-50
                   "
                 >
-                  <Linkedin size={22} />
+                  <FaLinkedin size={22} />
                 </button>
 
               </div>

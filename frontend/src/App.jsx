@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import FieldResultsPage from './pages/FieldResultsPage'
+import OperatorsPage from './pages/OperatorsPage'
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/capabilities" element={<CapabilitiesPage />} />
         <Route path="/field-results" element={<FieldResultsPage />} />
+        <Route path="/operators" element={<OperatorsPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
