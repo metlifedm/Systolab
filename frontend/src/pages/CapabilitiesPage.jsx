@@ -46,7 +46,6 @@ export default function CapabilitiesPage() {
 
   return (
     <main className="bg-white overflow-hidden">
-      <Navbar />
 
       <Hero />
 
@@ -60,7 +59,6 @@ export default function CapabilitiesPage() {
 
       <CTA />
 
-      <Footer />
     </main>
   )
 }

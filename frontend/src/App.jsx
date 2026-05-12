@@ -1,10 +1,18 @@
-import { Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import CapabilitiesPage from './pages/CapabilitiesPage'
+import HomePage from './pages/HomePage'
+import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<CapabilitiesPage />} />
-    </Routes>
+    <BrowserRouter>
+    <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/capabilities" element={<CapabilitiesPage />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   )
 }
