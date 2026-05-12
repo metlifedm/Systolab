@@ -1,1 +1,87 @@
 @import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --primary: #1447e6;
+  --secondary: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+.container-custom {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.section-padding {
+  padding-block: 80px;
+}
+
+.card-shadow {
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.04),
+    0 8px 24px rgba(15,23,42,0.06);
+}
+
+.glass {
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.8);
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.border-custom {
+  border-color: var(--border);
+}
+
+.heading-xl {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.heading-lg {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.heading-md {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.blue-gradient {
+  background: linear-gradient(
+    135deg,
+    #1447e6,
+    #2563eb
+  );
+}
+
+.grid-lines {
+  background-image:
+    linear-gradient(to right, rgba(20,71,230,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20,71,230,0.05) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+}
