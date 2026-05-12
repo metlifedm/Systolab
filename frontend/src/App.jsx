@@ -1,9 +1,10 @@
-import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import CapabilitiesPage from './pages/CapabilitiesPage'
 
-const App = () => {
+export default function App() {
   return (
-    <div>App</div>
+    <Routes>
+      <Route path="/" element={<CapabilitiesPage />} />
+    </Routes>
   )
 }
-
-export default App
